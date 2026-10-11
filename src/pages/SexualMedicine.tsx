@@ -1,7 +1,6 @@
 import React from 'react';
 import { MetaTags } from '../components/MetaTags';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { CallToActionBanner } from '../components/CallToActionBanner';
 import { Shield, CheckCircle2, Activity, Heart, UserCheck, Lock } from 'lucide-react';
 
 export const SexualMedicine: React.FC = () => {
@@ -31,19 +30,36 @@ export const SexualMedicine: React.FC = () => {
             </p>
           </div>
 
-          {/* Confidential Notice Card */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-blue-100 mb-12">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-blue-100 text-[#1538B8] flex items-center justify-center flex-shrink-0 font-bold">
-                <Lock className="w-6 h-6" />
-              </div>
-              <div className="space-y-2">
-                <h2 className="text-2xl font-bold text-[#1538B8]">
-                  Confidential & Personalised Care
-                </h2>
+          {/* Confidential Notice Card with Image */}
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-blue-100 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+              <div className="lg:col-span-7 p-8 sm:p-10 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-100 text-[#1538B8] flex items-center justify-center flex-shrink-0 font-bold">
+                    <Lock className="w-5 h-5" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-[#1538B8]">
+                    Confidential &amp; Personalised Care
+                  </h2>
+                </div>
                 <p className="text-slate-600 text-base leading-relaxed">
-                  Sexual health can have an important impact on physical well-being, confidence, relationships, and quality of life. At <strong>Ezhil Hospital & Fertility Centre</strong>, we provide a respectful, confidential, and supportive environment where patients can discuss their concerns openly and receive evidence-based medical evaluation.
+                  Sexual health can have an important impact on physical well-being, confidence, relationships, and quality of life. At <strong>Ezhil Hospital &amp; Fertility Centre</strong>, we provide a respectful, confidential, and supportive environment where patients can discuss their concerns openly and receive evidence-based medical evaluation.
                 </p>
+                <div className="p-3 bg-blue-50 rounded-xl text-xs font-semibold text-[#1538B8] border-l-4 border-[#1538B8]">
+                  All consultations and investigations are conducted under strict medical confidentiality.
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 h-64 lg:h-full min-h-[260px] relative overflow-hidden group">
+                <img
+                  src="/images/sexual-medicine.jpg"
+                  alt="Confidential Male Sexual Health Consultation"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
+                  <span className="text-xs font-bold text-blue-200 uppercase tracking-wider">Private &amp; Dignified</span>
+                  <p className="text-xs font-semibold text-white">Specialized clinical evaluation and personalized therapies</p>
+                </div>
               </div>
             </div>
           </div>
@@ -134,11 +150,6 @@ export const SexualMedicine: React.FC = () => {
             </div>
           </div>
 
-          {/* Call To Action Banner */}
-          <CallToActionBanner
-            title="Confidential Evaluation with Qualified Medical Specialists"
-            subtitle="Take the first step towards better reproductive and sexual health. Book a private consultation at Ezhil Hospital."
-          />
         </div>
       </div>
     </>

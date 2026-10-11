@@ -1,7 +1,6 @@
 import React from 'react';
 import { MetaTags } from '../components/MetaTags';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { CallToActionBanner } from '../components/CallToActionBanner';
 import { Activity, Microscope, CheckCircle2, User, Heart, AlertCircle } from 'lucide-react';
 
 export const FertilityEvaluation: React.FC = () => {
@@ -29,6 +28,30 @@ export const FertilityEvaluation: React.FC = () => {
             <p className="text-slate-700 text-lg leading-relaxed font-medium">
               Fertility evaluation helps identify possible factors affecting conception in both men and women. Appropriate tests are recommended based on the couple's medical history and clinical needs.
             </p>
+          </div>
+
+          {/* Diagnostic Spotlight Banner with Image */}
+          <div className="relative rounded-3xl overflow-hidden shadow-xl border border-pink-100 mb-10 group">
+            <div className="grid grid-cols-1 md:grid-cols-12 items-center bg-white">
+              <div className="md:col-span-5 h-56 sm:h-64 md:h-full min-h-[220px] relative overflow-hidden">
+                <img
+                  src="/images/fertility-evaluation.jpg"
+                  alt="Fertility Evaluation and Ultrasound Imaging at Ezhil Hospital"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="md:col-span-7 p-6 sm:p-8 space-y-3">
+                <span className="text-xs font-bold text-[#B51B83] uppercase tracking-wider bg-pink-50 px-3 py-1 rounded-full">
+                  Advanced Diagnostics & Senthil Scans
+                </span>
+                <h2 className="text-2xl font-extrabold text-[#1538B8]">
+                  Precision Fertility Testing & Imaging
+                </h2>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Our hospital is equipped with high-resolution pelvic ultrasound, in-house laboratory hormone profiling, and dedicated semen analysis facilities to accurately assess reproductive health for both partners.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
@@ -158,8 +181,6 @@ export const FertilityEvaluation: React.FC = () => {
             </div>
           </div>
 
-          {/* Call To Action Banner */}
-          <CallToActionBanner />
         </div>
       </div>
     </>

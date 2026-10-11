@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { Heart, ShieldCheck, Award, Users, Activity, Sparkles, Phone, ArrowRight, CheckCircle2, Clock, MapPin, Building, ChevronRight } from 'lucide-react';
 import { MetaTags } from '../components/MetaTags';
 import { ServiceCard } from '../components/ServiceCard';
-import { AppointmentForm } from '../components/AppointmentForm';
-import { CallToActionBanner } from '../components/CallToActionBanner';
 import { HOSPITAL_INFO, SERVICES, ACHIEVEMENTS } from '../data/hospitalData';
 
 export const Home: React.FC = () => {
@@ -16,69 +14,68 @@ export const Home: React.FC = () => {
         canonicalPath="/"
       />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden gradient-hero pt-8 pb-16 lg:py-20 border-b border-pink-100">
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-pink-400/10 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+      {/* Full-Width Hero Background Section */}
+      <section className="relative overflow-hidden py-16 sm:py-24 lg:py-28 min-h-[560px] lg:min-h-[620px] flex items-center border-b border-pink-100">
+        {/* Full-width Background Image with Responsive Crop */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/fertility-hero.jpg"
+            alt="Ezhil Hospital & Fertility Centre"
+            className="w-full h-full object-cover object-[center_30%] sm:object-[center_25%]"
+          />
+          {/* Subtle multi-gradient overlay for pristine text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 sm:via-white/75 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-white/40 sm:hidden" />
+          <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]" />
+        </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Column: Hero Text & CTAs */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-pink-100/80 border border-pink-200 text-[#B51B83] px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-sm">
-                <Sparkles className="w-4 h-4 text-[#B51B83]" />
-                <span>Trusted Healthcare Destination in Dharmapuri</span>
-              </div>
-
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#1538B8] tracking-tight leading-tight">
-                Compassionate Care.<br />
-                <span className="text-[#B51B83]">Personalised Treatment.</span>
-              </h1>
-
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-                Welcome to <strong className="text-slate-900 font-bold">Ezhil Hospital & Fertility Centre</strong>. We provide patient-focused healthcare, fertility services and personalised medical guidance to support individuals and families.
-              </p>
-
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <a
-                  href="#enquiry-form"
-                  className="w-full sm:w-auto bg-[#B51B83] hover:bg-[#9B146E] text-white px-8 py-4 rounded-xl font-black text-base shadow-xl hover:shadow-2xl transition-all duration-200 text-center transform hover:-translate-y-0.5"
-                >
-                  Book an Appointment
-                </a>
-
-                <a
-                  href={`tel:${HOSPITAL_INFO.actionPhone}`}
-                  className="w-full sm:w-auto bg-white border-2 border-[#1538B8] text-[#1538B8] hover:bg-blue-50 px-7 py-3.5 rounded-xl font-extrabold text-base transition-colors flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>Call {HOSPITAL_INFO.actionPhone}</span>
-                </a>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="pt-6 border-t border-pink-200/60 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
-                <div className="text-center lg:text-left">
-                  <div className="text-2xl font-black text-[#1538B8]">1998</div>
-                  <div className="text-xs font-semibold text-slate-600">Established Journey</div>
-                </div>
-                <div className="text-center lg:text-left border-x border-pink-200/60 px-2">
-                  <div className="text-2xl font-black text-[#B51B83]">5,000+</div>
-                  <div className="text-xs font-semibold text-slate-600">Infertility Cases</div>
-                </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-2xl font-black text-[#1538B8]">24/7</div>
-                  <div className="text-xs font-semibold text-slate-600">Maternity Care</div>
-                </div>
-              </div>
-
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="max-w-2xl lg:max-w-3xl space-y-6 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 bg-pink-100/90 backdrop-blur-sm border border-pink-200 text-[#B51B83] px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-sm">
+              <Sparkles className="w-4 h-4 text-[#B51B83]" />
+              <span>Trusted Healthcare Destination in Dharmapuri</span>
             </div>
 
-            {/* Right Column: Embedded Appointment Form */}
-            <div id="enquiry-form" className="lg:col-span-5">
-              <AppointmentForm compact={true} className="shadow-2xl border-2 border-pink-100" />
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#1538B8] tracking-tight leading-tight drop-shadow-xs">
+              Compassionate Care.<br />
+              <span className="text-[#B51B83]">Personalised Treatment.</span>
+            </h1>
+
+            <p className="text-slate-800 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+              Welcome to <strong className="text-slate-900 font-extrabold">Ezhil Hospital &amp; Fertility Centre</strong>. We provide patient-focused healthcare, fertility services and personalised medical guidance to support individuals and families.
+            </p>
+
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto bg-[#B51B83] hover:bg-[#9B146E] text-white px-8 py-4 rounded-xl font-black text-base shadow-xl hover:shadow-2xl transition-all duration-200 text-center transform hover:-translate-y-0.5"
+              >
+                Book an Appointment
+              </Link>
+
+              <a
+                href={`tel:${HOSPITAL_INFO.actionPhone}`}
+                className="w-full sm:w-auto bg-white/95 backdrop-blur-sm border-2 border-[#1538B8] text-[#1538B8] hover:bg-blue-50 px-7 py-3.5 rounded-xl font-extrabold text-base transition-colors flex items-center justify-center gap-2 shadow-md"
+              >
+                <Phone className="w-5 h-5" />
+                <span>Call {HOSPITAL_INFO.actionPhone}</span>
+              </a>
+            </div>
+
+            {/* Trust Badges */}
+            <div className="pt-6 border-t border-slate-300/70 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+              <div className="text-center lg:text-left bg-white/80 sm:bg-transparent backdrop-blur-xs p-2 sm:p-0 rounded-xl">
+                <div className="text-2xl sm:text-3xl font-black text-[#1538B8]">1998</div>
+                <div className="text-xs font-semibold text-slate-700">Established Journey</div>
+              </div>
+              <div className="text-center lg:text-left border-x border-slate-300/80 px-2 bg-white/80 sm:bg-transparent backdrop-blur-xs p-2 sm:p-0 rounded-xl">
+                <div className="text-2xl sm:text-3xl font-black text-[#B51B83]">5,000+</div>
+                <div className="text-xs font-semibold text-slate-700">Infertility Cases</div>
+              </div>
+              <div className="text-center lg:text-left bg-white/80 sm:bg-transparent backdrop-blur-xs p-2 sm:p-0 rounded-xl">
+                <div className="text-2xl sm:text-3xl font-black text-[#1538B8]">24/7</div>
+                <div className="text-xs font-semibold text-slate-700">Maternity Care</div>
+              </div>
             </div>
 
           </div>
@@ -119,33 +116,47 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-6">
-              <div className="bg-gradient-to-br from-pink-50 via-white to-blue-50 p-8 rounded-3xl border border-pink-100 shadow-xl space-y-6">
-                <h3 className="text-xl font-bold text-[#1538B8] flex items-center gap-2 border-b border-pink-200 pb-3">
-                  <ShieldCheck className="w-6 h-6 text-[#B51B83]" />
+            <div className="lg:col-span-6 space-y-6">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-pink-100 group">
+                <img
+                  src="/images/consultation.jpg"
+                  alt="Fertility Consultation at Ezhil Hospital"
+                  className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
+                  <span className="text-xs font-bold text-pink-300 uppercase tracking-wider">Compassionate Fertility Care</span>
+                  <p className="text-sm sm:text-base font-extrabold text-white mt-1">
+                    Personalised consultations and advanced reproductive technology in Dharmapuri.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-pink-50 via-white to-blue-50 p-6 rounded-2xl border border-pink-100 shadow-md space-y-4">
+                <h3 className="text-lg font-bold text-[#1538B8] flex items-center gap-2 border-b border-pink-200 pb-2">
+                  <ShieldCheck className="w-5 h-5 text-[#B51B83]" />
                   <span>Why Families Choose Ezhil</span>
                 </h3>
 
-                <ul className="space-y-4 text-slate-700 text-sm font-medium">
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-pink-100 text-[#B51B83] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">1</div>
+                <ul className="space-y-3 text-slate-700 text-xs sm:text-sm font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-pink-100 text-[#B51B83] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">1</div>
                     <div>
                       <strong className="text-slate-900 block font-bold">Personalised Treatment Planning</strong>
                       Care tailored to each couple's unique clinical history and reproductive needs.
                     </div>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-blue-100 text-[#1538B8] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">2</div>
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-blue-100 text-[#1538B8] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">2</div>
                     <div>
                       <strong className="text-slate-900 block font-bold">Advanced Fertility Laboratory</strong>
                       Equipped with dedicated seed bank, micromanipulators for ICSI, PGD, and ERA testing.
                     </div>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-pink-100 text-[#B51B83] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">3</div>
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-pink-100 text-[#B51B83] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">3</div>
                     <div>
                       <strong className="text-slate-900 block font-bold">Comprehensive Women's Healthcare</strong>
-                      24-hour maternity care, laparoscopic surgery, cosmetic gynaecology, and male sexual medicine under one roof.
+                      24-hour maternity care, laparoscopic surgery, cosmetic gynaecology, and male sexual medicine.
                     </div>
                   </li>
                 </ul>
@@ -278,65 +289,6 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Facilities & Contact Section */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
-              <div className="lg:col-span-7 space-y-4">
-                <span className="text-xs font-extrabold text-[#B51B83] uppercase tracking-wider">
-                  Location & Contact
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#1538B8]">
-                  Serving Families in Dharmapuri & Surrounding Regions
-                </h2>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  We are conveniently located in Dharmapuri, providing a clean, calm, and supportive environment for consultation, diagnostics, maternity care, and fertility treatment.
-                </p>
-
-                <div className="space-y-3 pt-2 text-sm text-slate-700">
-                  <div className="flex items-center gap-3 font-semibold">
-                    <MapPin className="w-5 h-5 text-[#B51B83]" />
-                    <span>Dharmapuri, Tamil Nadu, India</span>
-                  </div>
-                  <div className="flex items-center gap-3 font-semibold">
-                    <Phone className="w-5 h-5 text-[#1538B8]" />
-                    <span>Call Action Button: <a href={`tel:${HOSPITAL_INFO.actionPhone}`} className="text-[#1538B8] font-bold underline">{HOSPITAL_INFO.actionPhone}</a> / {HOSPITAL_INFO.primaryPhone}</span>
-                  </div>
-                  <div className="flex items-center gap-3 font-semibold">
-                    <Clock className="w-5 h-5 text-emerald-600" />
-                    <span>24-Hour Emergency & Maternity Services</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 flex flex-col gap-4 justify-center">
-                <Link
-                  to="/contact"
-                  className="w-full text-center bg-[#B51B83] hover:bg-[#9B146E] text-white py-4 rounded-xl font-extrabold shadow-lg transition-all"
-                >
-                  Contact & Book Appointment
-                </Link>
-                <a
-                  href={`https://wa.me/${HOSPITAL_INFO.whatsappNumber}?text=${encodeURIComponent(HOSPITAL_INFO.whatsappMessage)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-extrabold shadow transition-all flex items-center justify-center gap-2"
-                >
-                  <span>Quick WhatsApp Enquiry</span>
-                </a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Global Call to Action Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <CallToActionBanner />
-      </div>
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import { MetaTags } from '../components/MetaTags';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { CallToActionBanner } from '../components/CallToActionBanner';
 import { Stethoscope, CheckCircle2, Heart, ShieldAlert, Sparkles } from 'lucide-react';
 
 export const EndometriosisInfertility: React.FC = () => {
@@ -33,16 +32,30 @@ export const EndometriosisInfertility: React.FC = () => {
 
           {/* Detailed Content Card */}
           <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200 mb-12 space-y-8">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1538B8] mb-4">
-                What is Endometriosis?
-              </h2>
-              <p className="text-slate-600 text-base leading-relaxed mb-4">
-                Endometriosis is a common gynaecological condition that can affect women during their reproductive years. It occurs when tissue similar to the lining of the uterus (endometrium) grows outside the uterus, commonly involving areas such as the ovaries, fallopian tubes, and other tissues within the pelvis.
-              </p>
-              <p className="text-slate-600 text-base leading-relaxed">
-                The condition may be associated with chronic inflammation, scar tissue formation, and pelvic adhesions. Depending on its location and severity, endometriosis can cause symptoms such as <strong>severe pelvic pain, painful periods, pain during intercourse, and difficulties with fertility.</strong>
-              </p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1538B8]">
+                  What is Endometriosis?
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed">
+                  Endometriosis is a common gynaecological condition that can affect women during their reproductive years. It occurs when tissue similar to the lining of the uterus (endometrium) grows outside the uterus, commonly involving areas such as the ovaries, fallopian tubes, and other tissues within the pelvis.
+                </p>
+                <p className="text-slate-600 text-base leading-relaxed">
+                  The condition may be associated with chronic inflammation, scar tissue formation, and pelvic adhesions. Depending on its location and severity, endometriosis can cause symptoms such as <strong>severe pelvic pain, painful periods, pain during intercourse, and difficulties with fertility.</strong>
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-lg border border-pink-200 group">
+                <img
+                  src="/images/endometriosis.jpg"
+                  alt="Endometriosis Evaluation and Clinical Care"
+                  className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
+                  <span className="text-xs font-bold text-pink-300 uppercase tracking-wider">Clinical Care</span>
+                  <p className="text-xs font-semibold text-white">Advanced laparoscopic assessment & pain management</p>
+                </div>
+              </div>
             </div>
 
             {/* Impact on Fertility */}
@@ -104,11 +117,6 @@ export const EndometriosisInfertility: React.FC = () => {
             </div>
           </div>
 
-          {/* Call To Action Banner */}
-          <CallToActionBanner
-            title="Suffer From Severe Period Pain or Pelvic Discomfort?"
-            subtitle="Consult our experienced gynaecologists and fertility specialists at Ezhil Hospital for compassionate, confidential evaluation."
-          />
         </div>
       </div>
     </>

@@ -24,35 +24,51 @@ interface ServiceCardProps {
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-soft border border-slate-100 hover:border-pink-200 transition-all duration-300 shadow-hover flex flex-col justify-between group">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-soft border border-slate-100 hover:border-pink-200 transition-all duration-300 shadow-hover flex flex-col justify-between group">
       <div>
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-100 to-blue-50 text-[#B51B83] flex items-center justify-center mb-4 group-hover:bg-[#B51B83] group-hover:text-white transition-colors duration-300 shadow-sm">
-          {iconMap[service.iconName] || <Stethoscope className="w-6 h-6" />}
-        </div>
-        <h3 className="text-xl font-bold text-[#1538B8] group-hover:text-[#B51B83] transition-colors mb-2">
-          {service.title}
-        </h3>
-        <p className="text-slate-600 text-sm leading-relaxed mb-4">
-          {service.shortDesc}
-        </p>
+        {service.image && (
+          <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-100">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-white/95 text-[#B51B83] flex items-center justify-center shadow-md">
+              {iconMap[service.iconName] || <Stethoscope className="w-5 h-5" />}
+            </div>
+          </div>
+        )}
 
-        <ul className="space-y-2 mb-6">
-          {service.features.map((feature, i) => (
-            <li key={i} className="flex items-center gap-2 text-xs font-medium text-slate-700">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#B51B83] flex-shrink-0" />
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="p-6">
+          <h3 className="text-xl font-bold text-[#1538B8] group-hover:text-[#B51B83] transition-colors mb-2">
+            {service.title}
+          </h3>
+          <p className="text-slate-600 text-sm leading-relaxed mb-4">
+            {service.shortDesc}
+          </p>
+
+          <ul className="space-y-2 mb-2">
+            {service.features.map((feature, i) => (
+              <li key={i} className="flex items-center gap-2 text-xs font-medium text-slate-700">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#B51B83] flex-shrink-0" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <Link
-        to={service.path}
-        className="inline-flex items-center gap-2 text-sm font-extrabold text-[#B51B83] group-hover:text-[#1538B8] transition-colors pt-3 border-t border-slate-100"
-      >
-        <span>Learn Details</span>
-        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-      </Link>
+      <div className="px-6 pb-6 pt-2">
+        <Link
+          to={service.path}
+          className="inline-flex items-center gap-2 text-sm font-extrabold text-[#B51B83] group-hover:text-[#1538B8] transition-colors pt-3 border-t border-slate-100 w-full"
+        >
+          <span>Learn Details</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </div>
     </div>
   );
 };

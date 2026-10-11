@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { MetaTags } from '../components/MetaTags';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { ServiceCard } from '../components/ServiceCard';
-import { CallToActionBanner } from '../components/CallToActionBanner';
 import { SERVICES } from '../data/hospitalData';
 import { Sparkles, ShieldCheck, Heart, AlertCircle, ArrowRight } from 'lucide-react';
 
@@ -108,8 +107,6 @@ export const Services: React.FC = () => {
             </div>
           </div>
 
-          {/* Call To Action Banner */}
-          <CallToActionBanner />
         </div>
       </div>
     </>

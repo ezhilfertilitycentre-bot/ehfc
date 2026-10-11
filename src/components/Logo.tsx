@@ -7,9 +7,8 @@ interface LogoProps {
   showText?: boolean;
 }
 
-// Fallback order: /ezhil-logo.png → /ezhil-logo.svg → built-in monogram
-// To use a real PNG logo: place ezhil-logo.png in the /public folder
-const LOGO_SOURCES = ['/ezhil-logo.png', '/ezhil-logo.svg'];
+// Fallback order: /ezhil-logo.svg → /ezhil-logo.png → built-in monogram
+const LOGO_SOURCES = ['/ezhil-logo.svg', '/ezhil-logo.png'];
 
 export const Logo: React.FC<LogoProps> = ({ showText = true }) => {
   const [srcIndex, setSrcIndex] = useState(0);

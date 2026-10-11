@@ -39,10 +39,10 @@ export const HOSPITAL_INFO = {
 };
 
 export const TICKER_ACHIEVEMENTS = [
-  { statement: "10,000+ Surgeries", icon: "Activity", category: "General & Laparoscopic Care" },
-  { statement: "5,000+ Successful Fertility Cases", icon: "Heart", category: "Dedicated Fertility Care" },
-  { statement: "2,000+ Safe Deliveries", icon: "ShieldCheck", category: "24/7 Maternity Support" },
-  { statement: "150+ IVF Babies", icon: "Sparkles", category: "Advanced Reproductive Care" }
+  { statement: "10,000 surgeries", icon: "Activity", category: "General & Laparoscopic Care" },
+  { statement: "over 5,000 fertility successes", icon: "Heart", category: "Dedicated Fertility Care" },
+  { statement: "more than 2,000 safe deliveries", icon: "ShieldCheck", category: "24/7 Maternity Support" },
+  { statement: "over 150 IVF babies", icon: "Sparkles", category: "Advanced Reproductive Care" }
 ];
 
 export const MILESTONES: MilestoneItem[] = [

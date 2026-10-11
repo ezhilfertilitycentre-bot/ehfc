@@ -1,7 +1,6 @@
 import React from 'react';
 import { MetaTags } from '../components/MetaTags';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { CallToActionBanner } from '../components/CallToActionBanner';
 import { HOSPITAL_INFO, MILESTONES, ACHIEVEMENTS } from '../data/hospitalData';
 import { Award, ShieldCheck, Heart, Sparkles, Building2, CheckCircle2, UserCheck, Stethoscope, Compass } from 'lucide-react';
 
@@ -53,12 +52,19 @@ export const About: React.FC = () => {
                 </div>
               </div>
 
-              <div className="lg:col-span-4 bg-gradient-to-br from-pink-100 to-blue-50 p-8 rounded-2xl text-center border border-pink-200">
-                <div className="w-20 h-20 mx-auto rounded-full bg-[#B51B83] text-white flex items-center justify-center font-black text-2xl mb-4 shadow-lg">
-                  EH
+              <div className="lg:col-span-4 relative rounded-2xl overflow-hidden shadow-lg border border-pink-200 group">
+                <img
+                  src="/images/maternity-care.jpg"
+                  alt="Compassionate Maternity and Patient Care at Ezhil Hospital"
+                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent flex flex-col justify-end p-5 text-white">
+                  <div className="w-10 h-10 rounded-full bg-[#B51B83] text-white flex items-center justify-center font-black text-sm mb-2 shadow-md">
+                    EH
+                  </div>
+                  <h3 className="font-extrabold text-white text-base">25+ Years of Care</h3>
+                  <p className="text-xs text-pink-200 mt-0.5">Providing ethical, compassionate medical care in Dharmapuri since 1998.</p>
                 </div>
-                <h3 className="font-extrabold text-[#1538B8] text-lg">25+ Years of Care</h3>
-                <p className="text-xs text-slate-600 mt-1">Providing accessible, ethical, and high-quality medical care in Dharmapuri.</p>
               </div>
             </div>
           </div>
@@ -187,8 +193,6 @@ export const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Call To Action Banner */}
-          <CallToActionBanner />
         </div>
       </div>
     </>

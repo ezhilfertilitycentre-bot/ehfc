@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MetaTags } from '../components/MetaTags';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { CallToActionBanner } from '../components/CallToActionBanner';
 import { FEMALE_INFERTILITY_CAUSES, MALE_INFERTILITY_CAUSES } from '../data/hospitalData';
 import { HelpCircle, User, Users, CheckCircle2, ArrowRight } from 'lucide-react';
 
@@ -201,8 +200,6 @@ export const CausesOfInfertility: React.FC = () => {
             </div>
           </div>
 
-          {/* Call To Action Banner */}
-          <CallToActionBanner />
         </div>
       </div>
     </>

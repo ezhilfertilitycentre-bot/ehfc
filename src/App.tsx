@@ -39,6 +39,7 @@ export const App: React.FC = () => {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-white text-[#30323A]">
         <Header />
+        <AchievementsTicker />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

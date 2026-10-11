@@ -1,7 +1,6 @@
 import React from 'react';
 import { MetaTags } from '../components/MetaTags';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { CallToActionBanner } from '../components/CallToActionBanner';
 import { Smile, CheckCircle2, Heart, Shield, Sparkles } from 'lucide-react';
 
 export const CosmeticGynaecology: React.FC = () => {
@@ -33,16 +32,30 @@ export const CosmeticGynaecology: React.FC = () => {
 
           {/* Main Content Card */}
           <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200 mb-12 space-y-8">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1538B8] mb-4">
-                Personalised Care for Women's Intimate Wellness
-              </h2>
-              <p className="text-slate-600 text-base leading-relaxed mb-4">
-                A woman's body naturally changes through different stages of life. Childbirth, hormonal changes, ageing, and other physical factors may sometimes lead to concerns such as urinary leakage, vaginal laxity, dryness, recurrent infections, or changes in sexual comfort.
-              </p>
-              <p className="text-slate-600 text-base leading-relaxed">
-                These concerns can affect physical comfort, confidence, intimate relationships, and overall quality of life. At <strong>Ezhil Hospital & Fertility Centre</strong>, we provide discreet clinical evaluation and appropriate treatment options tailored to each woman's individual needs.
-              </p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1538B8]">
+                  Personalised Care for Women's Intimate Wellness
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed">
+                  A woman's body naturally changes through different stages of life. Childbirth, hormonal changes, ageing, and other physical factors may sometimes lead to concerns such as urinary leakage, vaginal laxity, dryness, recurrent infections, or changes in sexual comfort.
+                </p>
+                <p className="text-slate-600 text-base leading-relaxed">
+                  These concerns can affect physical comfort, confidence, intimate relationships, and overall quality of life. At <strong>Ezhil Hospital & Fertility Centre</strong>, we provide discreet clinical evaluation and appropriate treatment options tailored to each woman's individual needs.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-lg border border-pink-200 group">
+                <img
+                  src="/images/cosmetic-gynaecology.jpg"
+                  alt="Cosmetic Gynaecology and Intimate Wellness Care"
+                  className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
+                  <span className="text-xs font-bold text-pink-300 uppercase tracking-wider">Discreet &amp; Compassionate</span>
+                  <p className="text-xs font-semibold text-white">Advanced wellness and non-surgical aesthetic solutions</p>
+                </div>
+              </div>
             </div>
 
             {/* Conditions We Help Evaluate */}
@@ -142,8 +155,6 @@ export const CosmeticGynaecology: React.FC = () => {
             </div>
           </div>
 
-          {/* Call To Action Banner */}
-          <CallToActionBanner />
         </div>
       </div>
     </>
