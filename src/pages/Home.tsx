@@ -119,8 +119,8 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-6 space-y-6">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-pink-100 group">
                 <img
-                  src="/images/consultation.jpg"
-                  alt="Fertility Consultation at Ezhil Hospital"
+                  src="/images/fertility-evaluation.jpg"
+                  alt="Fertility Evaluation and Clinical Care at Ezhil Hospital"
                   className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">

@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/services" className="text-pink-100 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
                   <ArrowUpRight className="w-3.5 h-3.5 text-pink-300" />
-                  <span>Fertility Services</span>
+                  <span>All Services & Specialities</span>
                 </Link>
               </li>
               <li>
@@ -105,15 +105,15 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services#ivf" className="text-pink-100 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                <Link to="/services#fertility-ivf" className="text-pink-100 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
                   <ArrowUpRight className="w-3.5 h-3.5 text-pink-300" />
-                  <span>IVF & ICSI Treatments</span>
+                  <span>Fertility & IVF Wing</span>
                 </Link>
               </li>
               <li>
-                <Link to="/services#iui" className="text-pink-100 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                <Link to="/services#usg-ultrasound" className="text-pink-100 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
                   <ArrowUpRight className="w-3.5 h-3.5 text-pink-300" />
-                  <span>IUI & Ovulation Induction</span>
+                  <span>USG & Senthil Scans</span>
                 </Link>
               </li>
             </ul>

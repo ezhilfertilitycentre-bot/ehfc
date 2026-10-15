@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
   }, [location.pathname]);
 
   const serviceSubmenu = [
-    { name: 'All Fertility Services', path: '/services' },
+    { name: 'All Services & Specialities', path: '/services' },
     { name: 'Causes of Infertility', path: '/causes-of-infertility' },
     { name: 'Fertility Evaluation & Tests', path: '/fertility-evaluation' },
     { name: 'Endometriosis & Infertility', path: '/endometriosis-infertility' },
@@ -146,14 +146,6 @@ export const Header: React.FC = () => {
                 </div>
               )}
             </div>
-
-            <Link
-              to="/causes-of-infertility"
-              className={`px-3 py-2 rounded-md text-sm font-semibold transition-colors ${isActive('/causes-of-infertility') ? 'text-[#B51B83] bg-pink-50' : 'text-[#30323A] hover:text-[#1538B8] hover:bg-slate-50'
-                }`}
-            >
-              Causes of Infertility
-            </Link>
 
             <Link
               to="/contact"

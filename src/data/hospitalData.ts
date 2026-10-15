@@ -88,7 +88,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "Comprehensive evaluation and personalised treatment planning for couples seeking fertility guidance.",
     fullDesc: "Our expert fertility specialists offer empathetic, detailed consultations to evaluate reproductive health, review medical histories, and outline tailored diagnostic and treatment plans.",
     iconName: "UserCheck",
-    image: "/images/consultation.jpg",
+    image: "/images/fertility-hero.jpg",
     path: "/services",
     features: ["Couples Fertility Consultation", "Individualised Assessment", "Medical History Review", "Treatment Roadmap"]
   },

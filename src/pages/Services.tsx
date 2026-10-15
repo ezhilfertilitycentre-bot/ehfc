@@ -24,8 +24,15 @@ import {
   Clock,
   Filter,
   Check,
-  ChevronDown
+  ChevronDown,
+  BookOpen
 } from 'lucide-react';
+
+interface DetailLink {
+  label: string;
+  path: string;
+  description?: string;
+}
 
 interface ServiceCategory {
   id: string;
@@ -43,6 +50,7 @@ interface ServiceCategory {
     isSubjectToConfirmation?: boolean;
   }[];
   verificationNote?: string;
+  detailLinks?: DetailLink[];
 }
 
 const SERVICE_CATEGORIES: ServiceCategory[] = [
@@ -64,6 +72,10 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "Male & Female Infertility Assessment" },
       { name: "PCOS / PCOD-Related Fertility Care" },
       { name: "Infertility Profile Testing" }
+    ],
+    detailLinks: [
+      { label: "Causes of Infertility Guide", path: "/causes-of-infertility", description: "Comprehensive patient education on male & female factors" },
+      { label: "Fertility Evaluation & Diagnostic Tests", path: "/fertility-evaluation", description: "Semen analysis, hormonal panel & imaging" }
     ]
   },
   {
@@ -83,6 +95,10 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "Laparoscopic Gynaecological Surgery" },
       { name: "Menstrual & Hormonal Health" },
       { name: "Family Planning Counselling" }
+    ],
+    detailLinks: [
+      { label: "Endometriosis & Infertility Speciality", path: "/endometriosis-infertility", description: "Pelvic pain evaluation, laparoscopy & management" },
+      { label: "Cosmetic Gynaecology & Intimate Wellness", path: "/cosmetic-gynaecology", description: "Discreet care, post-childbirth & aesthetic wellness" }
     ]
   },
   {
@@ -109,7 +125,6 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
     departmentGroup: "surgical",
     tagline: "Minimally Invasive Precision Surgery with Faster Recovery",
     description: "Senior surgical consultants perform modern laparoscopic and general surgical procedures with advanced electronic instrumentation and strict sterile protocols.",
-    image: "/images/surgical-care.jpg",
     icon: <Activity className="w-5 h-5" />,
     badge: "Advanced Laparoscopy",
     services: [
@@ -120,6 +135,9 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "Laparoscopic Cholecystectomy" },
       { name: "Sterilisation Procedures" },
       { name: "Post-operative Care" }
+    ],
+    detailLinks: [
+      { label: "Laparoscopic Endometriosis Surgery", path: "/endometriosis-infertility", description: "Minimally invasive cystectomy and pelvic adhesiolysis" }
     ]
   },
   {
@@ -129,11 +147,11 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
     departmentGroup: "surgical",
     tagline: "Informed, Confidential Reproductive Health Guidance",
     description: "Confidential reproductive counselling and safe surgical family planning options tailored to individual health, family goals, and informed patient decision-making.",
-    image: "/images/consultation.jpg",
     icon: <Users className="w-5 h-5" />,
     badge: "Confidential Care",
     services: [
       { name: "Family Planning Counselling" },
+      { name: "Government-Approved Sterilisation Centre", note: "Accredited clinical procedure facility; formal documentation maintained on hospital file", isSubjectToConfirmation: true },
       { name: "Male Sterilisation (Vasectomy)", note: "Provided following clinical evaluation & eligibility confirmation", isSubjectToConfirmation: true },
       { name: "Female Sterilisation (Tubectomy)", note: "Provided following clinical evaluation & eligibility confirmation", isSubjectToConfirmation: true }
     ],
@@ -162,7 +180,6 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
     departmentGroup: "womens",
     tagline: "Gentle Medical Supervision for Newborns & Growing Children",
     description: "Pediatric care focused on healthy development, newborn assessments, phototherapy for physiological jaundice, and routine childhood clinical consultations.",
-    image: "/images/maternity-care.jpg",
     icon: <Baby className="w-5 h-5" />,
     badge: "Pediatric Care",
     services: [
@@ -170,6 +187,7 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "Senior Medical Officer Care" },
       { name: "24/7 Medical Services Available", note: "Emergency medical officer on duty", isSubjectToConfirmation: true },
       { name: "Newborn Care & Assessment" },
+      { name: "NICU (Neonatal Intensive Care Unit)", note: "Level of intensive monitoring subject to current operational schedule", isSubjectToConfirmation: true },
       { name: "Phototherapy for Newborns" }
     ],
     verificationNote: "NICU (Neonatal Intensive Care Unit) facilities are subject to current operational confirmation."
@@ -216,6 +234,9 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "NT (Nuchal Translucency) Scan" },
       { name: "Anomaly Scan" },
       { name: "Echo Scan", note: "Specific scan modality and schedule confirmed upon request", isSubjectToConfirmation: true }
+    ],
+    detailLinks: [
+      { label: "Pelvic & Follicular Ultrasound Diagnostics", path: "/fertility-evaluation", description: "High-resolution Senthil Scans for ovulation & pelvic health" }
     ]
   },
   {
@@ -261,12 +282,11 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
     departmentGroup: "facilities",
     tagline: "Spacious, Welcoming Patient Reception & Waiting Amenities",
     description: "Our outpatient facility is designed for smooth patient coordination, comfortable seating, clear guidance from desk personnel, and minimal waiting anxiety.",
-    image: "/images/consultation.jpg",
     icon: <Users className="w-5 h-5" />,
     badge: "OPD Amenities",
     services: [
       { name: "Spacious & Well-Ventilated Reception" },
-      { name: "Comfortable Patient Waiting Area", note: "Spacious seating arranged for patient comfort", isSubjectToConfirmation: true },
+      { name: "Comfortable Patient Waiting Area (Capacity up to 100 Patients)", note: "Spacious seating arranged for patient comfort", isSubjectToConfirmation: true },
       { name: "Reception & Patient Assistance" },
       { name: "Purified Drinking Water Facilities" },
       { name: "Positive & Motivational Wellness Quotes" }
@@ -317,13 +337,16 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "ENT (Ear, Nose & Throat) Consultations" },
       { name: "Oncology Consultation & Supportive Care" },
       { name: "Diagnostic Laboratory" }
+    ],
+    detailLinks: [
+      { label: "Male Sexual Health & Sexual Medicine", path: "/sexual-medicine", description: "Confidential evaluation for ED, hormone balance & vitality" }
     ]
   }
 ];
 
 const DEPARTMENT_TABS = [
   { id: 'all', label: 'All Services (15)' },
-  { id: 'fertility', label: 'Fertility & IVF' },
+  { id: 'fertility', label: 'Fertility & Reproductive' },
   { id: 'womens', label: "Women's & Maternity" },
   { id: 'surgical', label: 'Surgical & Laparoscopy' },
   { id: 'diagnostics', label: 'Diagnostics, Labs & USG' },
@@ -346,16 +369,16 @@ export const Services: React.FC = () => {
       />
 
       {/* Hero Section with Professional Healthcare Background Image */}
-      <section className="relative overflow-hidden py-16 sm:py-24 lg:py-28 min-h-[460px] flex items-center border-b border-pink-100">
+      <section className="relative overflow-hidden py-16 sm:py-24 lg:py-28 min-h-[440px] flex items-center border-b border-pink-100">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/consultation.jpg"
-            alt="Ezhil Hospital & Fertility Centre Services"
+            src="/images/fertility-hero.jpg"
+            alt="Ezhil Hospital & Fertility Centre Comprehensive Services"
             className="w-full h-full object-cover object-[center_35%]"
           />
-          {/* Subtle multi-gradient overlay for excellent text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B61]/95 via-[#1538B8]/85 to-[#B51B83]/80" />
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]" />
+          {/* Multi-gradient overlay for clinical elegance and high text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B61]/95 via-[#1538B8]/90 to-[#B51B83]/85" />
+          <div className="absolute inset-0 bg-black/25 backdrop-blur-[0.5px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-white">
@@ -366,67 +389,53 @@ export const Services: React.FC = () => {
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white drop-shadow-md">
-              Our Services
+              Our Services &amp; Specialities
             </h1>
 
-            <p className="text-blue-100 text-base sm:text-lg lg:text-xl leading-relaxed font-medium">
-              At <strong>Ezhil Hospital &amp; Fertility Centre</strong>, we provide personalized fertility care, comprehensive women's healthcare, maternity services, diagnostics, advanced laparoscopic surgery, and supportive medical facilities under one trusted roof.
+            <p className="text-blue-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed drop-shadow-sm">
+              Providing holistic patient care across 15 dedicated departments. From advanced IVF, micromanipulation (ICSI), and high-resolution ultrasound imaging to 24/7 maternity, general surgery, and comprehensive laboratory diagnostics.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              <a
-                href="#all-categories"
-                className="inline-flex items-center gap-2 bg-[#B51B83] hover:bg-[#9B146E] text-white px-6 py-3 rounded-xl font-extrabold text-sm shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
-              >
-                <span>Browse All 15 Departments</span>
-                <ChevronDown className="w-4 h-4" />
-              </a>
-
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white border border-white/30 px-6 py-3 rounded-xl font-extrabold text-sm backdrop-blur-sm transition-colors"
-              >
-                <span>Enquire with Hospital</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold text-white/90">
+              <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
+                <ShieldCheck className="w-4 h-4 text-pink-300" />
+                <span>15 Clinical Wings</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
+                <Activity className="w-4 h-4 text-pink-300" />
+                <span>Senthil Scans</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
+                <Clock className="w-4 h-4 text-pink-300" />
+                <span>24/7 Maternity &amp; Emergency Care</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Content Area */}
-      <div className="bg-slate-50 py-10" id="all-categories">
+      <div className="bg-slate-50/60 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: 'Our Services' }]} />
+          <Breadcrumb items={[{ label: 'Our Services & Specialities' }]} />
 
-          {/* Clinical Ethics & Verification Notice */}
-          <div className="bg-gradient-to-r from-pink-50/90 to-blue-50/90 border border-pink-200/80 rounded-2xl p-5 mb-10 text-slate-800 text-xs sm:text-sm flex items-start gap-3.5 shadow-xs">
-            <AlertCircle className="w-5 h-5 text-[#B51B83] flex-shrink-0 mt-0.5" />
-            <div className="space-y-1">
-              <p className="font-bold text-[#1538B8]">
-                Ethical &amp; Transparent Healthcare Information
-              </p>
-              <p className="text-slate-600 leading-relaxed text-xs">
-                All treatment modalities are planned individually following in-depth consultation and clinical diagnostics. Specific duty schedules, specialist visiting hours, and equipment configurations are confirmed directly with our hospital reception desk.
-              </p>
+          {/* Quick Department Filter Bar */}
+          <div className="my-8 sm:my-10">
+            <div className="flex items-center gap-2 mb-3">
+              <Filter className="w-4 h-4 text-[#B51B83]" />
+              <span className="text-xs font-extrabold uppercase tracking-wider text-[#30323A]">
+                Filter by Department Wing:
+              </span>
             </div>
-          </div>
 
-          {/* Department Quick Filter Navigation */}
-          <div className="mb-12">
-            <div className="flex items-center gap-2 mb-3 text-xs font-extrabold text-slate-600 uppercase tracking-wider">
-              <Filter className="w-3.5 h-3.5 text-[#B51B83]" />
-              <span>Filter by Clinical Wing</span>
-            </div>
-            
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin">
+            <div className="flex flex-wrap gap-2">
               {DEPARTMENT_TABS.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setSelectedTab(tab.id)}
-                  className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-2xs ${
                     selectedTab === tab.id
-                      ? 'bg-[#1538B8] text-white shadow-md'
+                      ? 'bg-[#B51B83] text-white shadow-md'
                       : 'bg-white text-slate-700 hover:text-[#1538B8] hover:bg-slate-100 border border-slate-200'
                   }`}
                 >
@@ -469,7 +478,7 @@ export const Services: React.FC = () => {
                       {category.description}
                     </p>
 
-                    {/* Image Showcase if image exists */}
+                    {/* Image Showcase if unique image exists */}
                     {category.image && (
                       <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-100 h-52 sm:h-60 w-full mt-4 group">
                         <img
@@ -486,6 +495,19 @@ export const Services: React.FC = () => {
                       </div>
                     )}
 
+                    {/* Non-image categories get an elegant clinical badge icon treatment */}
+                    {!category.image && (
+                      <div className="p-4 bg-gradient-to-br from-pink-50/70 to-blue-50/70 rounded-2xl border border-pink-100/80 flex items-center gap-3 text-slate-700">
+                        <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-[#1538B8] flex items-center justify-center flex-shrink-0">
+                          {category.icon}
+                        </div>
+                        <div className="text-xs">
+                          <span className="font-bold text-[#1538B8] block">Clinical Department Care</span>
+                          <span className="text-slate-500">Supervised by qualified medical and nursing personnel</span>
+                        </div>
+                      </div>
+                    )}
+
                     {category.verificationNote && (
                       <div className="p-3 bg-amber-50/80 rounded-xl border border-amber-200 text-amber-900 text-xs leading-relaxed flex items-start gap-2">
                         <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
@@ -494,7 +516,7 @@ export const Services: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Right Column: Service List */}
+                  {/* Right Column: Service List & Detail Guides */}
                   <div className="lg:col-span-7 bg-slate-50/80 rounded-2xl p-6 sm:p-8 border border-slate-200/60 flex flex-col justify-between h-full">
                     <div>
                       <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-200">
@@ -526,13 +548,42 @@ export const Services: React.FC = () => {
                               )}
                             </div>
                             {service.isSubjectToConfirmation && (
-                              <span className="hidden sm:inline-block text-[10px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
+                              <span className="hidden sm:inline-block text-[10px] font-semibold text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
                                 Consult Doctor
                               </span>
                             )}
                           </li>
                         ))}
                       </ul>
+
+                      {/* Deep Links to Existing Clinical Speciality Pages */}
+                      {category.detailLinks && category.detailLinks.length > 0 && (
+                        <div className="mt-6 pt-5 border-t border-slate-200">
+                          <div className="text-xs font-bold text-[#1538B8] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                            <Sparkles className="w-3.5 h-3.5 text-[#B51B83]" />
+                            <span>Related Clinical Speciality Guides</span>
+                          </div>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            {category.detailLinks.map((link, lIdx) => (
+                              <Link
+                                key={lIdx}
+                                to={link.path}
+                                className="flex items-center justify-between p-3 rounded-xl bg-pink-50/80 hover:bg-pink-100/90 border border-pink-200/80 transition-all text-xs font-bold text-[#B51B83] hover:text-[#9B146E] group/link shadow-2xs"
+                              >
+                                <div>
+                                  <span className="block font-bold">{link.label}</span>
+                                  {link.description && (
+                                    <span className="block text-[11px] font-normal text-slate-600 mt-0.5">
+                                      {link.description}
+                                    </span>
+                                  )}
+                                </div>
+                                <ArrowRight className="w-4 h-4 flex-shrink-0 group-hover/link:translate-x-1 transition-transform ml-2 text-[#B51B83]" />
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Department Footer CTA */}
@@ -594,3 +645,5 @@ export const Services: React.FC = () => {
     </>
   );
 };
+
+export default Services;
