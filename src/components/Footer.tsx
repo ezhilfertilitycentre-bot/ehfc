@@ -105,13 +105,13 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services#fertility-ivf" className="text-pink-100 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                <Link to="/services/fertility-ivf" className="text-pink-100 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
                   <ArrowUpRight className="w-3.5 h-3.5 text-pink-300" />
-                  <span>Fertility & IVF Wing</span>
+                  <span>Fertility & IVF Services</span>
                 </Link>
               </li>
               <li>
-                <Link to="/services#usg-ultrasound" className="text-pink-100 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                <Link to="/services/ultrasound" className="text-pink-100 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
                   <ArrowUpRight className="w-3.5 h-3.5 text-pink-300" />
                   <span>USG & Senthil Scans</span>
                 </Link>

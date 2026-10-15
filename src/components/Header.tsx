@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, MessageCircle, ChevronDown, Menu, X, Calendar, MapPin, Clock } from 'lucide-react';
+import { Phone, MessageCircle, ChevronDown, Menu, X, Calendar, MapPin, Clock, ArrowRight, Sparkles } from 'lucide-react';
 import { Logo } from './Logo';
-import { HOSPITAL_INFO, SERVICES } from '../data/hospitalData';
+import { HOSPITAL_INFO } from '../data/hospitalData';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesExpanded, setIsMobileServicesExpanded] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -24,13 +25,30 @@ export const Header: React.FC = () => {
     setIsServicesOpen(false);
   }, [location.pathname]);
 
-  const serviceSubmenu = [
-    { name: 'All Services & Specialities', path: '/services' },
-    { name: 'Causes of Infertility', path: '/causes-of-infertility' },
-    { name: 'Fertility Evaluation & Tests', path: '/fertility-evaluation' },
-    { name: 'Endometriosis & Infertility', path: '/endometriosis-infertility' },
-    { name: 'Cosmetic Gynaecology', path: '/cosmetic-gynaecology' },
-    { name: 'Male Sexual Health & Medicine', path: '/sexual-medicine' },
+  const categoryLinks = [
+    { name: "Fertility & IVF Services", path: "/services/fertility-ivf" },
+    { name: "Gynaecology & Women's Health", path: "/services/gynaecology-womens-health" },
+    { name: "Obstetrics & Maternity Care", path: "/services/obstetrics-maternity" },
+    { name: "General & Laparoscopic Surgery", path: "/services/general-laparoscopic-surgery" },
+    { name: "Family Planning & Sterilisation", path: "/services/family-planning" },
+    { name: "Cardiology Services", path: "/services/cardiology" },
+    { name: "Paediatrics & Neonatal Care", path: "/services/paediatrics-neonatal" },
+    { name: "Laboratory Services", path: "/services/laboratory" },
+    { name: "USG & Ultrasound Services", path: "/services/ultrasound" },
+    { name: "Operation Theatre & Facilities", path: "/services/operation-theatre" },
+    { name: "Inpatient Ward & Patient Care", path: "/services/inpatient-care" },
+    { name: "Outpatient (OPD) & Reception", path: "/services/opd-reception" },
+    { name: "Pharmacy & Medical Store", path: "/services/pharmacy" },
+    { name: "Vaccination & Immunisation", path: "/services/vaccination" },
+    { name: "Other Specialities & Diagnostics", path: "/services/other-specialities" }
+  ];
+
+  const specialityGuides = [
+    { name: "Causes of Infertility", path: "/causes-of-infertility" },
+    { name: "Fertility Evaluation", path: "/fertility-evaluation" },
+    { name: "Endometriosis Care", path: "/endometriosis-infertility" },
+    { name: "Cosmetic Gynaecology", path: "/cosmetic-gynaecology" },
+    { name: "Male Sexual Medicine", path: "/sexual-medicine" }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -47,7 +65,7 @@ export const Header: React.FC = () => {
             </span>
             <span className="hidden md:flex items-center gap-1.5 text-pink-100">
               <Clock className="w-3.5 h-3.5" />
-              <span>24/7 Maternity & Emergency Care</span>
+              <span>24/7 Maternity &amp; Emergency Care</span>
             </span>
           </div>
 
@@ -111,7 +129,7 @@ export const Header: React.FC = () => {
             >
               <Link
                 to="/services"
-                className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-semibold transition-colors ${location.pathname.includes('/services') ||
+                className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-semibold transition-colors ${location.pathname.startsWith('/services') ||
                   location.pathname.includes('/causes') ||
                   location.pathname.includes('/fertility-evaluation') ||
                   location.pathname.includes('/endometriosis') ||
@@ -121,28 +139,63 @@ export const Header: React.FC = () => {
                   : 'text-[#30323A] hover:text-[#1538B8] hover:bg-slate-50'
                   }`}
               >
-                <span>Services & Specialities</span>
+                <span>Services &amp; Specialities</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
               </Link>
 
-              {/* Mega Dropdown Menu */}
+              {/* Compact 2-Column Category Dropdown */}
               {isServicesOpen && (
-                <div className="absolute top-full left-0 w-72 bg-white rounded-xl shadow-xl border border-slate-100 py-2 mt-1 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="px-3 py-1.5 text-xs font-bold text-[#B51B83] uppercase tracking-wider border-b border-slate-100">
-                    Fertility & Women's Health
-                  </div>
-                  {serviceSubmenu.map((item) => (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[620px] bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-4 mt-1 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {/* Top Bar: Direct Link to Master Directory */}
+                  <div className="flex items-center justify-between pb-3 mb-2.5 border-b border-slate-100">
+                    <span className="text-xs font-extrabold text-[#1538B8] uppercase tracking-wider flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-[#B51B83]" />
+                      <span>15 Clinical Service Categories</span>
+                    </span>
                     <Link
-                      key={item.path}
-                      to={item.path}
-                      className={`block px-4 py-2.5 text-sm font-medium transition-colors ${isActive(item.path)
-                        ? 'text-[#B51B83] bg-pink-50 border-l-4 border-[#B51B83]'
-                        : 'text-[#30323A] hover:text-[#1538B8] hover:bg-blue-50/50'
-                        }`}
+                      to="/services"
+                      className="text-xs font-bold text-[#B51B83] hover:text-[#1538B8] transition-colors inline-flex items-center gap-1"
                     >
-                      {item.name}
+                      <span>View All Directory</span>
+                      <ArrowRight className="w-3 h-3" />
                     </Link>
-                  ))}
+                  </div>
+
+                  {/* 2-Column Compact Category Links */}
+                  <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+                    {categoryLinks.map((item, idx) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
+                          isActive(item.path)
+                            ? 'text-[#B51B83] bg-pink-50 font-bold'
+                            : 'text-slate-700 hover:text-[#1538B8] hover:bg-slate-50'
+                        }`}
+                      >
+                        <span className="w-4 text-[10px] text-slate-400 font-mono">
+                          {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                        </span>
+                        <span className="truncate">{item.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* Bottom Strip: Quick Access to Preserved Clinical Guides */}
+                  <div className="mt-3 pt-2.5 border-t border-slate-100 bg-slate-50/70 -mx-4 -mb-4 p-3 rounded-b-2xl flex items-center justify-between text-[11px]">
+                    <span className="text-slate-500 font-semibold">Specialised Guides:</span>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {specialityGuides.map((guide) => (
+                        <Link
+                          key={guide.path}
+                          to={guide.path}
+                          className="font-medium text-[#B51B83] hover:underline"
+                        >
+                          {guide.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -188,7 +241,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu Drawer */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl px-4 pt-3 pb-6 animate-in slide-in-from-top-4 duration-200">
+        <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl px-4 pt-3 pb-6 animate-in slide-in-from-top-4 duration-200 max-h-[85vh] overflow-y-auto">
           <div className="flex flex-col space-y-1">
             <Link
               to="/"
@@ -206,20 +259,52 @@ export const Header: React.FC = () => {
               About Us
             </Link>
 
+            {/* Mobile Services Accordion */}
             <div className="py-2 border-y border-slate-100 my-1">
-              <div className="px-4 py-1.5 text-xs font-bold text-[#B51B83] uppercase tracking-wider">
-                Services & Specialities
-              </div>
-              {serviceSubmenu.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`block px-6 py-2 text-sm font-medium ${isActive(item.path) ? 'text-[#B51B83] font-bold' : 'text-slate-600 hover:text-[#1538B8]'
-                    }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              <button
+                onClick={() => setIsMobileServicesExpanded(!isMobileServicesExpanded)}
+                className="w-full flex items-center justify-between px-4 py-2 text-sm font-bold text-[#1538B8]"
+              >
+                <span>Services &amp; Specialities (15)</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${isMobileServicesExpanded ? 'rotate-180' : ''}`} />
+              </button>
+
+              {isMobileServicesExpanded && (
+                <div className="mt-1 space-y-1 pl-2 animate-in fade-in duration-150">
+                  <Link
+                    to="/services"
+                    className="block px-4 py-2 text-xs font-bold text-[#B51B83] bg-pink-50 rounded-lg"
+                  >
+                    → All Services Directory (Overview)
+                  </Link>
+                  {categoryLinks.map((item, idx) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className={`block px-4 py-1.5 text-xs font-medium ${
+                        isActive(item.path) ? 'text-[#B51B83] font-bold' : 'text-slate-600 hover:text-[#1538B8]'
+                      }`}
+                    >
+                      {idx + 1}. {item.name}
+                    </Link>
+                  ))}
+
+                  <div className="pt-2 border-t border-slate-100 mt-2 px-4">
+                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+                      Speciality Clinical Guides:
+                    </span>
+                    {specialityGuides.map((guide) => (
+                      <Link
+                        key={guide.path}
+                        to={guide.path}
+                        className="block py-1 text-xs text-[#B51B83] font-semibold"
+                      >
+                        • {guide.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             <Link
@@ -253,3 +338,5 @@ export const Header: React.FC = () => {
     </header>
   );
 };
+
+export default Header;
