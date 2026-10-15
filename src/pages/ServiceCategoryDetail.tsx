@@ -3,7 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { MetaTags } from '../components/MetaTags';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { HOSPITAL_INFO } from '../data/hospitalData';
-import { getCategoryBySlug, SERVICE_CATEGORIES } from '../data/servicesData';
+import { getCategoryBySlug } from '../data/servicesData';
 import {
   Sparkles,
   ShieldCheck,
@@ -27,8 +27,7 @@ import {
   ChevronLeft,
   Calendar,
   MessageCircle,
-  ExternalLink,
-  BookOpen
+  ExternalLink
 } from 'lucide-react';
 
 interface Props {
@@ -77,24 +76,36 @@ export const ServiceCategoryDetail: React.FC<Props> = ({ forcedSlug }) => {
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B1B61] via-[#1538B8] to-[#B51B83] text-white py-14 sm:py-20 border-b border-pink-200">
-        {/* Subtle Decorative Ambient Glow */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B1B61] via-[#1538B8] to-[#B51B83] text-white pt-8 pb-14 sm:pt-10 sm:pb-20 border-b border-pink-200">
+        {/* Subtle Decorative Ambient Background */}
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-white/10 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-pink-500/20 blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          {/* Integrated In-Hero Breadcrumb */}
+          <div className="mb-6 sm:mb-8">
+            <Breadcrumb
+              variant="dark"
+              items={[
+                { label: 'Services & Specialities', path: '/services' },
+                { label: category.title }
+              ]}
+            />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left Content */}
+            {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-5 animate-fade-up">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="w-9 h-9 rounded-xl bg-white/15 backdrop-blur-md text-pink-200 font-black text-sm flex items-center justify-center border border-white/20">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="w-9 h-9 rounded-xl bg-white/15 backdrop-blur-md text-pink-200 font-black text-xs sm:text-sm flex items-center justify-center border border-white/20 shadow-sm">
                   {category.number < 10 ? `0${category.number}` : category.number}
                 </span>
-                <span className="text-xs font-extrabold uppercase tracking-wider bg-white/15 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/20 text-pink-200">
+                <span className="text-xs font-extrabold uppercase tracking-wider bg-white/15 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/20 text-pink-200 shadow-sm">
                   {category.badge}
                 </span>
-                <span className="text-xs font-semibold text-blue-200 flex items-center gap-1">
+                <span className="text-xs font-semibold text-blue-200 flex items-center gap-1 bg-white/10 px-3 py-1 rounded-full">
                   <Clock className="w-3.5 h-3.5" />
                   <span>Dharmapuri, Tamil Nadu</span>
                 </span>
@@ -112,6 +123,7 @@ export const ServiceCategoryDetail: React.FC<Props> = ({ forcedSlug }) => {
                 {category.shortDesc}
               </p>
 
+              {/* Action Buttons */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <Link
                   to="/contact"
@@ -131,43 +143,65 @@ export const ServiceCategoryDetail: React.FC<Props> = ({ forcedSlug }) => {
               </div>
             </div>
 
-            {/* Right Showcase: Image or Styled Clinical Card */}
+            {/* Right Showcase Column: Image or Bespoke Healthcare Graphic */}
             <div className="lg:col-span-5">
               {category.image ? (
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 group">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 h-72 sm:h-80 lg:h-[360px] w-full group">
                   <img
                     src={category.image}
                     alt={category.title}
-                    className="w-full h-72 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    loading="eager"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
                     <span className="text-xs font-bold text-pink-300 uppercase tracking-wider">
                       Ezhil Hospital &amp; Fertility Centre
                     </span>
-                    <span className="text-white font-extrabold text-sm sm:text-base mt-0.5">
+                    <span className="text-white font-extrabold text-base sm:text-lg mt-0.5 drop-shadow-sm">
                       {category.title}
                     </span>
                   </div>
                 </div>
               ) : (
-                <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-white text-[#1538B8] flex items-center justify-center shadow-md">
-                    {renderIcon(category.iconName, "w-8 h-8")}
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-pink-300 uppercase tracking-wider">
-                      Clinical Department
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 h-72 sm:h-80 lg:h-[360px] w-full bg-gradient-to-br from-[#0B1B61]/95 via-[#1538B8]/95 to-[#B51B83]/90 p-6 sm:p-8 flex flex-col justify-between group">
+                  {/* Subtle Background Geometric Glow */}
+                  <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-pink-400/20 blur-2xl pointer-events-none" />
+                  <div className="absolute -bottom-10 -left-10 w-44 h-44 rounded-full bg-blue-400/20 blur-2xl pointer-events-none" />
+
+                  {/* Top Header of Card */}
+                  <div className="relative z-10 flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-white text-[#1538B8] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      {renderIcon(category.iconName, "w-7 h-7")}
+                    </div>
+                    <span className="text-xs font-bold text-pink-200 uppercase tracking-wider bg-white/15 px-3 py-1 rounded-full border border-white/20">
+                      Department Facility
                     </span>
-                    <h2 className="text-xl sm:text-2xl font-extrabold text-white mt-1">
-                      {category.title}
-                    </h2>
                   </div>
-                  <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
-                    Supervised by dedicated medical consultants and registered nurses, committed to quality healthcare and patient well-being in Dharmapuri.
-                  </p>
-                  <div className="pt-2 border-t border-white/20 flex items-center justify-between text-xs text-pink-200 font-semibold">
-                    <span>Clinical Wing {category.number < 10 ? `0${category.number}` : category.number} of 15</span>
-                    <span>Confidential Care</span>
+
+                  {/* Middle Feature Highlights */}
+                  <div className="relative z-10 space-y-2.5 my-auto">
+                    <h3 className="text-lg sm:text-xl font-black text-white leading-tight">
+                      {category.customVisualTitle || category.title}
+                    </h3>
+
+                    {category.customVisualFeatures && category.customVisualFeatures.length > 0 && (
+                      <ul className="space-y-1.5 pt-1">
+                        {category.customVisualFeatures.map((feat, fIdx) => (
+                          <li key={fIdx} className="flex items-center gap-2 text-xs text-blue-100 font-medium">
+                            <span className="w-4 h-4 rounded-full bg-pink-500/30 text-pink-200 flex items-center justify-center flex-shrink-0 text-[10px]">
+                              ✓
+                            </span>
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+
+                  {/* Bottom Strip */}
+                  <div className="relative z-10 pt-3 border-t border-white/20 flex items-center justify-between text-xs text-pink-200 font-medium">
+                    <span>Clinical Wing 0{category.number}</span>
+                    <span>Dharmapuri Facility</span>
                   </div>
                 </div>
               )}
@@ -181,20 +215,14 @@ export const ServiceCategoryDetail: React.FC<Props> = ({ forcedSlug }) => {
       <div className="bg-slate-50/70 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
-          {/* Breadcrumb & Back Link */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <Breadcrumb
-              items={[
-                { label: 'Services & Specialities', path: '/services' },
-                { label: category.title }
-              ]}
-            />
+          {/* Quick Back to Directory Link */}
+          <div className="flex items-center justify-between">
             <Link
               to="/services"
-              className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#B51B83] hover:text-[#1538B8] transition-colors self-start"
+              className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#B51B83] hover:text-[#1538B8] transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
-              <span>Back to All 15 Services &amp; Specialities</span>
+              <span>Back to All 15 Services &amp; Specialities Directory</span>
             </Link>
           </div>
 

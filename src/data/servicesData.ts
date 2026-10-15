@@ -24,6 +24,8 @@ export interface ServiceCategoryData {
   shortDesc: string;
   fullOverview: string[];
   image?: string;
+  customVisualTitle?: string;
+  customVisualFeatures?: string[];
   iconName: string;
   badge: string;
   services: ServiceItem[];
@@ -96,7 +98,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       "Our Gynaecology Department provides attentive healthcare for women through adolescence, reproductive years, pregnancy, and menopause. We emphasize conservative medical therapies first, supported by modern diagnostic hysteroscopy and minimally invasive laparoscopic surgery when intervention is warranted.",
       "From treating irregular cycles, PCOS, ovarian cysts, and endometriosis to managing pelvic organ prolapse and uterine fibroids, our clinical team focuses on dignified, empathetic patient communication and rapid recovery."
     ],
-    image: "/images/endometriosis.jpg",
+    image: "/images/fertility-hero.jpg",
     iconName: "Heart",
     badge: "Women's Health",
     services: [
@@ -182,6 +184,12 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       "Ezhil Hospital offers advanced minimally invasive surgical care performed by experienced general and laparoscopic surgeons. Laparoscopy utilizes tiny incisions, high-definition camera towers, and precision instruments to perform abdominal and pelvic procedures with reduced tissue trauma.",
       "Patients experience significantly less post-operative discomfort, shortened hospital stays, reduced wound infection rates, and faster return to their daily routines compared to traditional open surgery."
     ],
+    customVisualTitle: "Minimally Invasive Laparoscopic Surgery",
+    customVisualFeatures: [
+      "Keyhole Laparoscopic Approaches with Minimal Scarring",
+      "Advanced Laparoscopic Tower with HD Optical Visualization",
+      "Shortened Inpatient Stays & Prompt Day-Care Recovery"
+    ],
     iconName: "Activity",
     badge: "Advanced Laparoscopy",
     services: [
@@ -227,6 +235,12 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       "Family planning is a fundamental aspect of preventive reproductive healthcare. At Ezhil Hospital, we provide supportive, non-judgmental guidance to help individuals and couples make informed decisions regarding birth spacing and completed family planning.",
       "We offer counselling on temporary contraceptive methods as well as safe surgical permanent sterilisation procedures performed with strict sterile surgical standards and patient consent."
     ],
+    customVisualTitle: "Confidential Reproductive Planning",
+    customVisualFeatures: [
+      "Informed Contraceptive Choice & Birth Spacing Guidance",
+      "Surgical Tubectomy & Vasectomy Eligibility Evaluation",
+      "Complete Patient Confidentiality & Ethical Protocols"
+    ],
     iconName: "Users",
     badge: "Confidential Care",
     services: [
@@ -263,6 +277,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       "Heart health is central to overall vitality and safe surgical outcomes. Ezhil Hospital provides clinical cardiovascular assessments, pre-operative cardiac fitness evaluations, and routine electrocardiogram (ECG) testing for outpatients and inpatients.",
       "Visiting and on-call cardiology specialists provide expert opinions for patients presenting with hypertension, chest discomfort, breathlessness, palpitations, or lifestyle-related cardiovascular risk factors."
     ],
+    image: "/images/iui-treatment.jpg",
     iconName: "HeartPulse",
     badge: "Cardiac Care",
     services: [
@@ -297,6 +312,12 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
     fullOverview: [
       "Children require dedicated, gentle medical care tailored to their developmental stages. Our Paediatrics Department provides health supervision for infants, young children, and adolescents, addressing common childhood infections, growth tracking, and developmental milestones.",
       "For newborns born at Ezhil Hospital, our team provides immediate newborn evaluation, APGAR assessment, warm nursery care, and blue-light phototherapy for physiological jaundice."
+    ],
+    customVisualTitle: "Gentle Paediatric & Newborn Care",
+    customVisualFeatures: [
+      "Immediate Newborn Assessment & Pediatric Supervision",
+      "Specialized LED Phototherapy for Neonatal Jaundice",
+      "Comprehensive Childhood Growth & Milestone Guidance"
     ],
     iconName: "Baby",
     badge: "Pediatric Care",
@@ -336,7 +357,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       "Accurate medical diagnoses and successful fertility treatments depend directly on laboratory precision. Ezhil Hospital's in-house laboratory is equipped with automated biochemistry analyzers, hormonal immunoassay systems, and strict internal quality assurance.",
       "We perform routine haematology panels, infection screenings, specialized female and male reproductive hormone profiles (AMH, FSH, LH, Estradiol, Prolactin, Testosterone), and antenatal double/triple marker screening."
     ],
-    image: "/images/era-receptivity.jpg",
+    image: "/images/pgd-genetics.jpg",
     iconName: "Microscope",
     badge: "Diagnostic Testing",
     services: [
@@ -469,6 +490,12 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       "Healing happens best in a calm, supportive, and hygienic atmosphere. Ezhil Hospital's inpatient facilities provide pleasant accommodations for patients recovering from childbirth, fertility procedures, or general and laparoscopic surgeries.",
       "Our nursing team ensures continuous monitoring, timely medication administration, nutritional guidance, and responsive assistance to make each patient's stay safe and comfortable."
     ],
+    customVisualTitle: "Hygienic Inpatient Recovery Ward",
+    customVisualFeatures: [
+      "Air-Conditioned & Restful Patient Recovery Rooms",
+      "Attentive Round-the-Clock Ward Nursing Care",
+      "Regular Medical Officer Support & Sanitisation Protocols"
+    ],
     iconName: "Bed",
     badge: "Inpatient Care",
     services: [
@@ -506,6 +533,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       "Our Outpatient Department is designed to make your hospital visit smooth, organized, and reassuring from the moment you step through our doors. Reception staff are available to assist with doctor appointments, clinic schedules, and diagnostic test directions.",
       "We provide spacious, airy waiting lounges, purified reverse-osmosis drinking water, clear signage, and an uplifting atmosphere adorned with motivational wellness quotes."
     ],
+    image: "/images/cosmetic-gynaecology.jpg",
     iconName: "Users",
     badge: "OPD Amenities",
     services: [
@@ -542,6 +570,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       "Fertility medications, hormonal injections, antibiotics, and surgical recovery drugs require impeccable storage conditions to remain fully potent. Ezhil Hospital operates a licensed in-house medical store ensuring immediate availability of prescribed pharmaceuticals.",
       "We maintain specialized medical refrigeration units for temperature-sensitive gonadotropin injections, vaccines, and biologics, ensuring complete cold-chain integrity from receipt to patient administration."
     ],
+    image: "/images/sexual-medicine.jpg",
     iconName: "Pill",
     badge: "In-House Pharmacy",
     services: [
@@ -577,6 +606,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       "Immunisation is one of the most effective preventive health measures for shielding children and mothers from infectious illnesses. Ezhil Hospital provides structured vaccination schedules in accordance with established national pediatric and maternal health recommendations.",
       "From birth vaccines for newborns to antenatal tetanus and pertussis protection for pregnant women, our medical officers ensure each dose is safely stored and accurately documented."
     ],
+    image: "/images/ovulation-induction.jpg",
     iconName: "Syringe",
     badge: "Immunisation Protocol",
     services: [
@@ -611,6 +641,12 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
     fullOverview: [
       "To meet the wider healthcare needs of families in Dharmapuri, Ezhil Hospital coordinates access to visiting specialist consultants in allied medical and surgical domains. This multidisciplinary approach ensures patients receive well-rounded clinical care under one roof.",
       "Our multispeciality care includes ENT reviews, cancer supportive care and general oncology consultations, diagnostic pathology, and confidential male andrology/sexual wellness evaluations."
+    ],
+    customVisualTitle: "Multidisciplinary Allied Consultations",
+    customVisualFeatures: [
+      "Ear, Nose & Throat (ENT) Clinical Evaluations",
+      "General Oncology Supportive Care Consultations",
+      "Integrated Laboratory & Diagnostic Coordination"
     ],
     iconName: "Stethoscope",
     badge: "Multispeciality Care",

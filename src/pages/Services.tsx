@@ -166,17 +166,22 @@ export const Services: React.FC = () => {
                       </span>
                     </div>
                   ) : (
-                    <div className="h-44 w-full bg-gradient-to-br from-pink-50 via-white to-blue-50 border-b border-slate-100 p-6 flex items-center justify-between relative">
-                      <div className="w-12 h-12 rounded-2xl bg-[#1538B8] text-white flex items-center justify-center shadow-md">
-                        {renderIcon(category.iconName, "w-6 h-6")}
+                    <div className="h-48 w-full bg-gradient-to-br from-[#0B1B61] via-[#1538B8] to-[#B51B83] border-b border-slate-100 p-5 flex flex-col justify-between relative text-white">
+                      <div className="flex items-center justify-between">
+                        <div className="w-10 h-10 rounded-xl bg-white text-[#1538B8] flex items-center justify-center shadow-md">
+                          {renderIcon(category.iconName, "w-5 h-5")}
+                        </div>
+                        <span className="w-7 h-7 rounded-lg bg-white/20 backdrop-blur-md text-pink-200 font-black text-xs flex items-center justify-center">
+                          {category.number < 10 ? `0${category.number}` : category.number}
+                        </span>
                       </div>
-                      <span className="w-8 h-8 rounded-lg bg-pink-100 text-[#B51B83] font-black text-xs flex items-center justify-center">
-                        {category.number < 10 ? `0${category.number}` : category.number}
-                      </span>
-                      <div className="absolute bottom-3 left-6">
-                        <span className="text-xs font-bold text-[#B51B83] uppercase tracking-wider bg-pink-100/80 px-2.5 py-0.5 rounded-full">
+                      <div>
+                        <span className="text-[10px] font-bold text-pink-200 uppercase tracking-wider bg-white/15 px-2.5 py-0.5 rounded-full inline-block mb-1">
                           {category.badge}
                         </span>
+                        <div className="text-xs font-bold text-white line-clamp-1">
+                          {category.customVisualTitle || category.title}
+                        </div>
                       </div>
                     </div>
                   )}
