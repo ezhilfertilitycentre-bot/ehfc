@@ -35,7 +35,7 @@ export const FertilityEvaluation: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-12 items-center bg-white">
               <div className="md:col-span-5 h-56 sm:h-64 md:h-full min-h-[220px] relative overflow-hidden">
                 <img
-                  src="/images/fertility-evaluation.jpg"
+                  src="/images/ultrasound-scan.jpg"
                   alt="Fertility Evaluation and Ultrasound Imaging at Ezhil Hospital"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

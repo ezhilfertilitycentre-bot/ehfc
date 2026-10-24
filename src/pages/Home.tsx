@@ -94,15 +94,18 @@ export const Home: React.FC = () => {
               </div>
               
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1538B8] leading-tight">
-                Welcome to Ezhil Hospital & Fertility Centre
+                <span className="font-black text-[#B51B83] bg-pink-100/90 px-3 py-0.5 rounded-xl border border-pink-200/80 inline-block mr-1 shadow-xs">
+                  Welcome
+                </span>{" "}
+                to Ezhil Hospital &amp; Fertility Centre
               </h2>
 
               <p className="text-slate-600 text-base leading-relaxed">
-                At <strong>Ezhil Hospital & Fertility Centre</strong>, we understand that the journey to parenthood can be deeply personal and challenging. Our aim is to provide compassionate care, personalised treatment and advanced fertility services to help couples move forward with confidence.
+                At <strong className="font-bold text-slate-900">Ezhil Hospital &amp; Fertility Centre</strong>, we understand that the journey to parenthood can be deeply personal and challenging. Our aim is to provide compassionate care, personalised treatment and advanced fertility services to help couples move forward with confidence.
               </p>
 
               <p className="text-slate-600 text-base leading-relaxed">
-                Founded by <strong>{HOSPITAL_INFO.founder}</strong>, our journey began on 4th June 1998 as a small clinic. Over two decades of dedicated care, we expanded into a full-fledged hospital providing comprehensive fertility evaluations, IVF, ICSI, IUI, 24-hour maternity services, and advanced surgical procedures.
+                Founded by <strong className="font-black text-slate-950">{HOSPITAL_INFO.founder}</strong>, our journey began on 4th June 1998 as a small clinic. Over two decades of dedicated care, we expanded into a full-fledged hospital providing comprehensive fertility evaluations, IVF, ICSI, IUI, 24-hour maternity services, and advanced surgical procedures.
               </p>
 
               <div className="pt-2">
@@ -119,8 +122,8 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-6 space-y-6">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-pink-100 group">
                 <img
-                  src="/images/fertility-evaluation.jpg"
-                  alt="Fertility Evaluation and Clinical Care at Ezhil Hospital"
+                  src="/images/ultrasound-scan.jpg"
+                  alt="Fertility Evaluation and Clinical Ultrasound at Ezhil Hospital"
                   className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">

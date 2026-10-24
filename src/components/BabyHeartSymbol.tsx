@@ -1,10 +1,8 @@
 import React from 'react';
 
 interface BabyHeartSymbolProps {
-  /** px size — width and height are equal (default 48) */
   size?: number;
   className?: string;
-  /** Optional aria label override */
   ariaLabel?: string;
 }
 
@@ -12,10 +10,10 @@ interface BabyHeartSymbolProps {
  * Original SVG illustration — sleeping newborn baby cradled in a cupped hand,
  * with a heart symbol above, enclosed in a clean circular outline.
  *
- * Inspired by the client's reference image. 100 % original vector paths —
+ * Inspired by the client's reference image. 100% original vector paths —
  * no watermarks, no raster images, transparent background.
  *
- * Brand colours: magenta #B51B83 (fill accents) · royal-blue #1538B8 (strokes)
+ * Brand colours: magenta #B51B83 (fills & accents) · royal-blue #1538B8 (strokes)
  */
 export const BabyHeartSymbol: React.FC<BabyHeartSymbolProps> = ({
   size = 48,
@@ -33,180 +31,181 @@ export const BabyHeartSymbol: React.FC<BabyHeartSymbolProps> = ({
     className={className}
     style={{ display: 'block' }}
   >
-    {/* ── Outer circle border ── */}
+    {/* ── Soft background wash ── */}
+    <circle cx="50" cy="50" r="46" fill="#FFF0F8" opacity="0.7" />
+
+    {/* ── Outer circle — main border ── */}
     <circle
-      cx="50"
-      cy="50"
-      r="46"
-      stroke="#1538B8"
-      strokeWidth="3"
-      fill="none"
-      opacity="0.18"
-    />
-    <circle
-      cx="50"
-      cy="50"
-      r="43"
+      cx="50" cy="50" r="45"
       stroke="#B51B83"
-      strokeWidth="1.5"
+      strokeWidth="2.2"
       fill="none"
-      opacity="0.14"
+      opacity="0.55"
+    />
+    {/* Inner ring — subtle royal blue */}
+    <circle
+      cx="50" cy="50" r="41"
+      stroke="#1538B8"
+      strokeWidth="1"
+      fill="none"
+      opacity="0.12"
     />
 
-    {/* ── Soft background fill (very light pink tint) ── */}
-    <circle cx="50" cy="50" r="43" fill="#FDF0F7" opacity="0.55" />
-
     {/* ══════════════════════════════════════════
-        HEART  (top-centre, above baby)
-        Two bezier lobes forming a classic heart,
-        partially open at bottom like the reference.
+        HEART  (top-centre)
+        Classic double-lobe heart in magenta fill
         ══════════════════════════════════════════ */}
     <path
-      d="M50 35
-         C50 35 42 27 37 31
-         C33 34.5 34 41 38 44
-         C42 47 50 52 50 52
-         C50 52 58 47 62 44
-         C66 41 67 34.5 63 31
-         C58 27 50 35 50 35Z"
+      d="M50 36
+         C50 36 41.5 27.5 36.5 31.5
+         C32 35 33 42 37.5 45
+         C42 48 50 53.5 50 53.5
+         C50 53.5 58 48 62.5 45
+         C67 42 68 35 63.5 31.5
+         C58.5 27.5 50 36 50 36Z"
       fill="#B51B83"
-      opacity="0.85"
+      opacity="0.88"
     />
-    {/* Heart inner sheen */}
-    <ellipse cx="44" cy="34" rx="3" ry="2" fill="white" opacity="0.35" transform="rotate(-20 44 34)" />
+    {/* Sheen highlight on heart */}
+    <ellipse
+      cx="43.5" cy="35"
+      rx="3.5" ry="2.2"
+      fill="white"
+      opacity="0.32"
+      transform="rotate(-25 43.5 35)"
+    />
 
     {/* ══════════════════════════════════════════
-        CUPPED HAND  (centre-lower)
-        A gentle curved palm cradling the baby.
+        CUPPED HAND  (lower half)
+        Gentle open palm cradling the baby
         ══════════════════════════════════════════ */}
 
-    {/* Palm / cup base */}
+    {/* Palm body fill */}
     <path
-      d="M26 68
-         C26 61 29 57 36 55
-         C40 54 60 54 64 55
-         C71 57 74 61 74 68
-         C74 68 60 73 50 73
-         C40 73 26 68 26 68Z"
-      fill="#1538B8"
-      opacity="0.13"
+      d="M24 70
+         C24 62 28 57.5 36 55.5
+         C41 54.5 59 54.5 64 55.5
+         C72 57.5 76 62 76 70
+         C76 70 62 75 50 75
+         C38 75 24 70 24 70Z"
+      fill="#EBF0FF"
+      opacity="0.7"
       stroke="#1538B8"
       strokeWidth="1.8"
       strokeLinejoin="round"
     />
 
-    {/* Left finger arc */}
+    {/* Left cupped finger */}
     <path
-      d="M26 68 C22 62 22 54 28 51"
+      d="M24 70 C19.5 63 20 54 27 50.5"
       stroke="#1538B8"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       fill="none"
-      opacity="0.7"
+      opacity="0.72"
     />
 
-    {/* Right finger arc */}
+    {/* Right cupped finger */}
     <path
-      d="M74 68 C78 62 78 54 72 51"
+      d="M76 70 C80.5 63 80 54 73 50.5"
       stroke="#1538B8"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       fill="none"
-      opacity="0.7"
+      opacity="0.72"
     />
 
-    {/* Wrist / lower palm curve */}
+    {/* Wrist curve */}
     <path
-      d="M30 72 C35 77 65 77 70 72"
+      d="M29 74.5 C36 79.5 64 79.5 71 74.5"
       stroke="#1538B8"
-      strokeWidth="2"
+      strokeWidth="1.8"
       strokeLinecap="round"
       fill="none"
-      opacity="0.55"
+      opacity="0.5"
     />
 
     {/* ══════════════════════════════════════════
-        SLEEPING BABY  (lying inside the hand)
-        Head (circle) + body curve + arm + tiny ear
+        SLEEPING BABY  (curled inside the hand)
+        Head + body + closed eye + tiny smile
         ══════════════════════════════════════════ */}
 
     {/* Baby body — curled fetal pose */}
     <path
-      d="M37 64
-         C37 60 40 57 44 57
-         C52 57 63 59 64 63
-         C65 66 62 69 56 69
-         C48 70 37 68 37 64Z"
+      d="M36 65
+         C36 61 39.5 57.5 44 57.5
+         C53 57.5 65 60 65 64.5
+         C65 67.5 61 70.5 54 70.5
+         C46 71 36 69 36 65Z"
       fill="#FDE8F4"
       stroke="#B51B83"
-      strokeWidth="1.6"
+      strokeWidth="1.7"
       strokeLinejoin="round"
     />
 
     {/* Baby head */}
     <circle
-      cx="36"
-      cy="61"
-      r="7"
+      cx="34.5" cy="62"
+      r="7.5"
       fill="#FDE8F4"
       stroke="#B51B83"
-      strokeWidth="1.6"
+      strokeWidth="1.7"
     />
 
-    {/* Baby ear */}
+    {/* Tiny ear */}
     <path
-      d="M36 55 C38 53 41 54 41 56"
+      d="M34.5 55 C37 53 40.5 54.5 40.5 57"
       stroke="#B51B83"
-      strokeWidth="1.2"
+      strokeWidth="1.3"
       strokeLinecap="round"
       fill="none"
     />
 
-    {/* Closed sleeping eye — peaceful line */}
+    {/* Closed sleeping eye */}
     <path
-      d="M32 60 C33.5 58.5 35.5 58.5 37 60"
-      stroke="#B51B83"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      fill="none"
-    />
-
-    {/* Tiny nose dot */}
-    <circle cx="34.5" cy="62.5" r="0.8" fill="#B51B83" opacity="0.7" />
-
-    {/* Soft smile */}
-    <path
-      d="M33 64.5 C34.2 66 36 66 37 64.5"
-      stroke="#B51B83"
-      strokeWidth="1.2"
-      strokeLinecap="round"
-      fill="none"
-    />
-
-    {/* Baby arm / fist tucked under cheek */}
-    <path
-      d="M40 60 C43 58 48 58 50 60 C52 62 50 65 47 65"
+      d="M30.5 61 C32 59.2 35 59.2 36.5 61"
       stroke="#B51B83"
       strokeWidth="1.5"
       strokeLinecap="round"
       fill="none"
     />
 
-    {/* Baby blanket / swaddle hint */}
+    {/* Tiny nose */}
+    <circle cx="33" cy="63.5" r="0.9" fill="#B51B83" opacity="0.65" />
+
+    {/* Tiny peaceful smile */}
     <path
-      d="M44 68 C48 70 56 70 62 67"
-      stroke="#1538B8"
-      strokeWidth="1.4"
+      d="M31.5 65.5 C32.8 67.2 35 67.2 36.2 65.5"
+      stroke="#B51B83"
+      strokeWidth="1.3"
       strokeLinecap="round"
       fill="none"
-      opacity="0.45"
     />
 
-    {/* ── Subtle decorative sparkle dots ── */}
-    <circle cx="78" cy="34" r="1.6" fill="#B51B83" opacity="0.4" />
-    <circle cx="81" cy="39" r="1" fill="#1538B8" opacity="0.3" />
-    <circle cx="22" cy="38" r="1.6" fill="#B51B83" opacity="0.4" />
-    <circle cx="19" cy="43" r="1" fill="#1538B8" opacity="0.3" />
+    {/* Baby arm / little fist */}
+    <path
+      d="M40 61 C44 58.5 50 59 52 61.5 C53.5 63.5 51 66.5 48 66.5"
+      stroke="#B51B83"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      fill="none"
+    />
+
+    {/* Swaddle / blanket line */}
+    <path
+      d="M44 69.5 C49 71.5 57 71.5 63 68"
+      stroke="#1538B8"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      fill="none"
+      opacity="0.38"
+    />
+
+    {/* ── Sparkle accents ── */}
+    <circle cx="79" cy="33" r="1.8" fill="#B51B83" opacity="0.38" />
+    <circle cx="83" cy="39" r="1.1" fill="#1538B8" opacity="0.28" />
+    <circle cx="21" cy="37" r="1.8" fill="#B51B83" opacity="0.38" />
+    <circle cx="17" cy="43" r="1.1" fill="#1538B8" opacity="0.28" />
   </svg>
 );
 

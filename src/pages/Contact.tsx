@@ -11,7 +11,7 @@ export const Contact: React.FC = () => {
     <>
       <MetaTags
         title="Contact Us - Book Appointment & Hospital Location"
-        description="Contact Ezhil Hospital & Fertility Centre in Pappireddipatti, Dharmapuri. Call 9442497622 or 8056984522, message via WhatsApp, or submit an online appointment enquiry."
+        description="Contact Ezhil Hospital & Fertility Centre in Harur, Dharmapuri. Call 9442497622 or 8056984522, message via WhatsApp, or submit an online appointment enquiry."
         canonicalPath="/contact"
       />
 
@@ -34,10 +34,10 @@ export const Contact: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-            
+
             {/* Left Column: Contact Details & Quick Actions */}
             <div className="lg:col-span-5 space-y-8">
-              
+
               <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200 space-y-6">
                 <h2 className="text-2xl font-extrabold text-[#1538B8] border-b border-pink-200 pb-3">
                   Direct Hospital Contacts
@@ -99,7 +99,7 @@ export const Contact: React.FC = () => {
                     <MapPin className="w-5 h-5 text-[#B51B83] flex-shrink-0 mt-0.5" />
                     <div>
                       <strong className="block font-bold text-slate-900">Hospital Address</strong>
-                      <span>Gopinathampatti Koot Road, Pappireddipatti,<br />Dharmapuri Dist., Tamil Nadu 636903</span>
+                      <span>Gopinathampatti Koot Road, Harur,<br />Dharmapuri (DT), Tamil Nadu 636903</span>
                     </div>
                   </div>
 
@@ -134,7 +134,7 @@ export const Contact: React.FC = () => {
                   <span>Find Us on the Map</span>
                 </h2>
                 <p className="text-sm text-slate-500 mt-1">
-                  Gopinathampatti Koot Road, Pappireddipatti, Dharmapuri Dist., Tamil Nadu 636903
+                  Gopinathampatti Koot Road, Harur, Dharmapuri (DT), Tamil Nadu 636903
                 </p>
               </div>
               <a

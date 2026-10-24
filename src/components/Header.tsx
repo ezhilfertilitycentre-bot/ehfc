@@ -61,7 +61,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center flex-wrap gap-4 justify-center sm:justify-start">
             <span className="flex items-center gap-1.5 font-medium">
               <MapPin className="w-3.5 h-3.5 text-pink-200" />
-              <span>Pappireddipatti, Dharmapuri Dist., Tamil Nadu</span>
+              <span>Harur, Dharmapuri (DT), Tamil Nadu</span>
             </span>
             <span className="hidden md:flex items-center gap-1.5 text-pink-100">
               <Clock className="w-3.5 h-3.5" />
@@ -167,11 +167,10 @@ export const Header: React.FC = () => {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
-                          isActive(item.path)
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${isActive(item.path)
                             ? 'text-[#B51B83] bg-pink-50 font-bold'
                             : 'text-slate-700 hover:text-[#1538B8] hover:bg-slate-50'
-                        }`}
+                          }`}
                       >
                         <span className="w-4 text-[10px] text-slate-400 font-mono">
                           {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
@@ -211,14 +210,6 @@ export const Header: React.FC = () => {
 
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
-            <a
-              href={`tel:${HOSPITAL_INFO.actionPhone}`}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border-2 border-[#1538B8] text-[#1538B8] font-bold text-sm hover:bg-blue-50 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span>Call Us</span>
-            </a>
-
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 bg-[#B51B83] hover:bg-[#9B146E] text-white px-4 py-2 rounded-lg font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
@@ -281,9 +272,8 @@ export const Header: React.FC = () => {
                     <Link
                       key={item.path}
                       to={item.path}
-                      className={`block px-4 py-1.5 text-xs font-medium ${
-                        isActive(item.path) ? 'text-[#B51B83] font-bold' : 'text-slate-600 hover:text-[#1538B8]'
-                      }`}
+                      className={`block px-4 py-1.5 text-xs font-medium ${isActive(item.path) ? 'text-[#B51B83] font-bold' : 'text-slate-600 hover:text-[#1538B8]'
+                        }`}
                     >
                       {idx + 1}. {item.name}
                     </Link>

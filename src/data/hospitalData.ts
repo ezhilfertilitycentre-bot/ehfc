@@ -27,13 +27,13 @@ export const HOSPITAL_INFO = {
   tagline: "Compassionate Care. Personalised Treatment. Hope for Tomorrow.",
   slogan: "Your Health. Our Care. Your Trust.",
   founder: "Dr. Senthilvadivu",
-  location: "Pappireddipatti, Dharmapuri Dist., Tamil Nadu",
+  location: "Harur, Dharmapuri (DT), Tamil Nadu",
   primaryPhone: "9442497622",
   actionPhone: "8056984522",
   whatsappNumber: "919442497622",
   whatsappMessage: "Hello Ezhil Hospital & Fertility Centre, I would like to enquire about a fertility consultation.",
   email: "contact@ezhilhospital.com",
-  address: "Gopinathampatti Koot Road, Pappireddipatti Taluka, Gobinathampatti, Dharmapuri Dist., Tamil Nadu 636903",
+  address: "Gopinathampatti Koot Road, Harur (TK), Dharmapuri (DT), Tamil Nadu 636903",
   googleMapsUrl: "https://maps.app.goo.gl/iJ1NNZp1K8kZejjn6",
   establishedYear: 1998,
 };
@@ -98,7 +98,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "Comprehensive diagnostic testing for both male and female partners to pinpoint root causes.",
     fullDesc: "Thorough male semen analysis and female hormonal, follicular, ultrasound, and tubal assessments to understand your fertility profile.",
     iconName: "Activity",
-    image: "/images/fertility-evaluation.jpg",
+    image: "/images/ultrasound-scan.jpg",
     path: "/fertility-evaluation",
     features: ["Semen Analysis", "Hormonal Panel (AMH, FSH, LH)", "Pelvic Ultrasound", "HSG Tubal Evaluation"]
   },
@@ -118,7 +118,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "Minimally invasive fertility procedure placing prepared sperm directly into the uterus.",
     fullDesc: "A safe, outpatient procedure where washed high-motility sperm is carefully introduced into the uterine cavity at the time of ovulation.",
     iconName: "HeartHandshake",
-    image: "/images/iui-treatment.jpg",
+    image: "/images/family-planning.jpg",
     path: "/services",
     features: ["Sperm Processing & Washing", "Natural or Stimulated Cycle IUI", "Painless Outpatient Procedure"]
   },
@@ -158,7 +158,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "Molecular test determining the optimal endometrial window of implantation for IVF.",
     fullDesc: "Determines the exact personalized timing for embryo transfer, particularly helpful in cases of recurrent implantation failure.",
     iconName: "Clock",
-    image: "/images/era-receptivity.jpg",
+    image: "/images/pathology-laboratory.jpg",
     path: "/services",
     features: ["Personalized Window of Implantation", "Implantation Failure Analysis", "Targeted Embryo Transfer"]
   },
@@ -168,7 +168,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "Specialised evaluation and management of pelvic pain, adhesions, and associated infertility.",
     fullDesc: "Diagnostic imaging, medical management, and laparoscopic surgical options designed to relieve pain and preserve reproductive capacity.",
     iconName: "Stethoscope",
-    image: "/images/endometriosis.jpg",
+    image: "/images/gynaecology-consult.jpg",
     path: "/endometriosis-infertility",
     features: ["Pelvic Pain Management", "Laparoscopic Adhesiolysis", "Ovarian Cyst Removal", "Fertility Preservation"]
   },
@@ -178,7 +178,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "Discreet and respectful care for intimate wellness, post-childbirth changes, and comfort.",
     fullDesc: "Minimally invasive and outpatient solutions addressing urinary leakage, vaginal laxity, dryness, and intimate comfort.",
     iconName: "Smile",
-    image: "/images/cosmetic-gynaecology.jpg",
+    image: "/images/gynaecology-consult.jpg",
     path: "/cosmetic-gynaecology",
     features: ["Laser Vaginal Rejuvenation", "Urinary Leakage Management", "Post-Childbirth Restoration", "Discreet Outpatient Care"]
   },
@@ -198,7 +198,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "24-hour maternity, laparoscopic hysterectomy, hernia, appendicitis, and surgical care.",
     fullDesc: "Full-spectrum surgical and maternity care including 24-hour emergency delivery, hysterectomy, diagnostic laparoscopy, and hysteroscopy.",
     iconName: "Building2",
-    image: "/images/surgical-care.jpg",
+    image: "/images/laparoscopic-surgery.jpg",
     path: "/about",
     features: ["24/7 Maternity & Delivery", "Laparoscopic Hysterectomy", "Diagnostic Hysteroscopy", "Oncology & General Surgery"]
   }

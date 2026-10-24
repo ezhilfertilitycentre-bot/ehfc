@@ -47,7 +47,7 @@ export const CosmeticGynaecology: React.FC = () => {
 
               <div className="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-lg border border-pink-200 group">
                 <img
-                  src="/images/cosmetic-gynaecology.jpg"
+                  src="/images/gynaecology-consult.jpg"
                   alt="Cosmetic Gynaecology and Intimate Wellness Care"
                   className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
                 />

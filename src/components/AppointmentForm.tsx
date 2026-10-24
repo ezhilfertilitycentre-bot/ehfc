@@ -14,7 +14,6 @@ export const AppointmentForm: React.FC<FormProps> = ({ compact = false, classNam
     email: '',
     preferredDate: '',
     department: 'Fertility Consultation',
-    preferredDoctor: 'No Preference / First Available',
     notes: ''
   });
 
@@ -30,17 +29,6 @@ export const AppointmentForm: React.FC<FormProps> = ({ compact = false, classNam
     'Cosmetic Gynaecology',
     'Male Sexual Health & Medicine',
     '24/7 Maternity & Surgical Care'
-  ];
-
-  const doctors = [
-    'No Preference / First Available Specialist',
-    'Dr. Senthilvadivu (Founder & Senior Consultant)',
-    'Dr. B. Prabhavathi (Obstetrics & Gynaecology)',
-    'Dr. Shanmugapriya (Obstetrics & Gynaecology)',
-    'Dr. M. Uma Kalyan (IVF Consultant)',
-    'Dr. Mangala Kalyani (IVF Consultant)',
-    'Dr. T. Kathiravan (General & Laparoscopic Surgery)',
-    'Dr. C. Senthilvel (General & Paediatric Medicine)'
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -72,7 +60,6 @@ export const AppointmentForm: React.FC<FormProps> = ({ compact = false, classNam
 ${formData.email ? `*Email:* ${formData.email.trim()}` : ''}
 ${formData.preferredDate ? `*Preferred Date:* ${formData.preferredDate}` : ''}
 *Service/Department:* ${formData.department}
-*Preferred Doctor:* ${formData.preferredDoctor}
 ${formData.notes ? `*Additional Notes:* ${formData.notes.trim()}` : ''}
 
 Please confirm availability and next steps. Thank you!`;
@@ -220,25 +207,6 @@ Please confirm availability and next steps. Thank you!`;
           </div>
         </div>
 
-        {/* Preferred Doctor */}
-        <div>
-          <label htmlFor="preferredDoctor" className="block text-xs font-bold text-slate-700 uppercase mb-1">
-            Preferred Consultant <span className="text-slate-400 font-normal">(Optional)</span>
-          </label>
-          <select
-            id="preferredDoctor"
-            name="preferredDoctor"
-            value={formData.preferredDoctor}
-            onChange={handleChange}
-            className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#B51B83] focus:bg-white transition-all"
-          >
-            {doctors.map((doc) => (
-              <option key={doc} value={doc}>
-                {doc}
-              </option>
-            ))}
-          </select>
-        </div>
 
         {!compact && (
           <div>
