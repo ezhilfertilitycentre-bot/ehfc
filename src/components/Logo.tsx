@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BabyHeartSymbol } from './BabyHeartSymbol';
 
 interface LogoProps {
   variant?: 'light' | 'dark';
@@ -23,8 +24,8 @@ export const Logo: React.FC<LogoProps> = ({ showText = true }) => {
   };
 
   return (
-    <Link to="/" className="inline-flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#B51B83] rounded-lg p-1">
-      {/* Logo Badge Container */}
+    <Link to="/" className="inline-flex items-center gap-2.5 group focus:outline-none focus:ring-2 focus:ring-[#B51B83] rounded-lg p-1">
+      {/* Hospital Logo Badge */}
       <div className="relative flex-shrink-0 w-12 h-12 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-300 bg-[#B51B83] p-1 flex items-center justify-center">
         {!allFailed ? (
           <img
@@ -53,6 +54,7 @@ export const Logo: React.FC<LogoProps> = ({ showText = true }) => {
         )}
       </div>
 
+      {/* Hospital Name Text */}
       {showText && (
         <div className="flex flex-col">
           <span className="font-extrabold text-lg sm:text-xl tracking-tight leading-tight text-[#1538B8]">
@@ -62,6 +64,29 @@ export const Logo: React.FC<LogoProps> = ({ showText = true }) => {
             Hospital &amp; Fertility Centre
           </span>
         </div>
+      )}
+
+      {/* ── Baby-Heart Symbol ──
+          Displayed beside the logo text on sm+ screens.
+          Hidden on xs to protect the hamburger-menu button space. */}
+      {showText && (
+        <>
+          {/* Thin vertical divider between wordmark and symbol */}
+          <div
+            className="hidden sm:block self-stretch w-px mx-1 rounded-full"
+            style={{
+              background: 'linear-gradient(to bottom, transparent, #B51B83 30%, #1538B8 70%, transparent)',
+              opacity: 0.25,
+            }}
+          />
+          {/* Symbol with subtle hover scale matching the logo badge */}
+          <div
+            className="hidden sm:flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+            title="Ezhil Hospital — caring for new life"
+          >
+            <BabyHeartSymbol size={44} />
+          </div>
+        </>
       )}
     </Link>
   );
