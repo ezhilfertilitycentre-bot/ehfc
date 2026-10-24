@@ -34,7 +34,7 @@ export const HOSPITAL_INFO = {
   whatsappMessage: "Hello Ezhil Hospital & Fertility Centre, I would like to enquire about a fertility consultation.",
   email: "contact@ezhilhospital.com",
   address: "Gopinathampatti Koot Road, Pappireddipatti Taluka, Gobinathampatti, Dharmapuri Dist., Tamil Nadu 636903",
-  googleMapsUrl: "https://maps.google.com/?q=Gopinathampatti+Koot+Road+Pappireddipatti+Tamil+Nadu+636903",
+  googleMapsUrl: "https://maps.app.goo.gl/iJ1NNZp1K8kZejjn6",
   establishedYear: 1998,
 };
 
