@@ -124,38 +124,43 @@ export const Contact: React.FC = () => {
 
           </div>
 
-          {/* Interactive Location Preview / Map Card */}
-          <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200 mb-12">
-            <h2 className="text-2xl font-extrabold text-[#1538B8] mb-4 flex items-center gap-2">
-              <MapPin className="w-6 h-6 text-[#B51B83]" />
-              <span>Location in Dharmapuri</span>
-            </h2>
-            <p className="text-slate-600 text-sm leading-relaxed mb-6">
-              Ezhil Hospital & Fertility Centre is situated in Pappireddipatti, Dharmapuri District, serving patients across the region with state-of-the-art diagnostic imaging, maternity services, and fertility care.
-            </p>
-
-            <div className="w-full h-72 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 relative flex items-center justify-center">
-              {/* Map Placeholder Graphic */}
-              <div className="text-center space-y-3 p-6">
-                <div className="w-12 h-12 rounded-full bg-[#B51B83] text-white flex items-center justify-center mx-auto shadow-md">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div className="font-extrabold text-[#1538B8] text-lg">
-                  Ezhil Hospital & Fertility Centre
-                </div>
-                <div className="text-xs text-slate-600">
-                  Gopinathampatti Koot Road, Pappireddipatti, Tamil Nadu 636903
-                </div>
-                <a
-                  href={HOSPITAL_INFO.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#1538B8] text-white px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-[#0E2685] transition-colors shadow-md"
-                >
-                  <span>Open in Google Maps</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+          {/* Embedded Google Map */}
+          <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden mb-12">
+            {/* Map Header */}
+            <div className="px-8 pt-7 pb-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-100">
+              <div>
+                <h2 className="text-2xl font-extrabold text-[#1538B8] flex items-center gap-2">
+                  <MapPin className="w-6 h-6 text-[#B51B83]" />
+                  <span>Find Us on the Map</span>
+                </h2>
+                <p className="text-sm text-slate-500 mt-1">
+                  Gopinathampatti Koot Road, Pappireddipatti, Dharmapuri Dist., Tamil Nadu 636903
+                </p>
               </div>
+              <a
+                href={HOSPITAL_INFO.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#B51B83] hover:bg-[#9B146E] text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-colors flex-shrink-0"
+              >
+                <MapPin className="w-4 h-4" />
+                <span>Get Directions</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Live iframe embed — no API key required */}
+            <div className="w-full h-96 sm:h-[440px]">
+              <iframe
+                title="Ezhil Hospital & Fertility Centre — Google Maps Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.5!2d78.4433994!3d11.9966795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac70398428a9d1%3A0x5d7f13ac16caf33!2sEZHIL%20HOSPITAL%20AND%20FERTILITY%20CENTER!5e0!3m2!1sen!2sin!4v1698000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 
