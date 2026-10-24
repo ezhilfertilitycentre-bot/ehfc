@@ -47,8 +47,8 @@ export const NotFound: React.FC = () => {
 
           <div className="pt-6 border-t border-slate-100 text-xs text-slate-500">
             Need urgent assistance? Call our reception directly at{' '}
-            <a href="tel:8056984522" className="font-bold text-[#1538B8] hover:underline">
-              8056984522
+            <a href="tel:9442497622" className="font-bold text-[#1538B8] hover:underline">
+              9442497622
             </a>
           </div>
         </div>

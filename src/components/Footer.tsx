@@ -127,16 +127,16 @@ export const Footer: React.FC = () => {
             <div className="space-y-3.5 text-sm text-pink-100 font-medium">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
-                <span>Dharmapuri, Tamil Nadu, India</span>
+                <span>Gopinathampatti Koot Road, Pappireddipatti, Dharmapuri Dist., Tamil Nadu 636903</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-white flex-shrink-0" />
                 <div className="flex flex-col">
-                  <a href={`tel:${HOSPITAL_INFO.actionPhone}`} className="hover:text-white font-black text-white text-base">
-                    {HOSPITAL_INFO.actionPhone} <span className="text-xs font-normal text-pink-200">(Call Action)</span>
-                  </a>
-                  <a href={`tel:${HOSPITAL_INFO.primaryPhone}`} className="hover:text-white text-xs text-pink-200">
+                  <a href={`tel:${HOSPITAL_INFO.primaryPhone}`} className="hover:text-white font-black text-white text-base">
                     {HOSPITAL_INFO.primaryPhone}
+                  </a>
+                  <a href={`tel:${HOSPITAL_INFO.actionPhone}`} className="hover:text-white text-xs text-pink-200">
+                    {HOSPITAL_INFO.actionPhone}
                   </a>
                 </div>
               </div>

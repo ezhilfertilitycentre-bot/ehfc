@@ -11,7 +11,7 @@ export const Contact: React.FC = () => {
     <>
       <MetaTags
         title="Contact Us - Book Appointment & Hospital Location"
-        description="Contact Ezhil Hospital & Fertility Centre in Dharmapuri. Call 8056984522 or 9442497622, message via WhatsApp, or submit an online appointment enquiry."
+        description="Contact Ezhil Hospital & Fertility Centre in Pappireddipatti, Dharmapuri. Call 9442497622 or 8056984522, message via WhatsApp, or submit an online appointment enquiry."
         canonicalPath="/contact"
       />
 
@@ -99,7 +99,7 @@ export const Contact: React.FC = () => {
                     <MapPin className="w-5 h-5 text-[#B51B83] flex-shrink-0 mt-0.5" />
                     <div>
                       <strong className="block font-bold text-slate-900">Hospital Address</strong>
-                      <span>Dharmapuri, Tamil Nadu, India</span>
+                      <span>Gopinathampatti Koot Road, Pappireddipatti,<br />Dharmapuri Dist., Tamil Nadu 636903</span>
                     </div>
                   </div>
 
@@ -131,7 +131,7 @@ export const Contact: React.FC = () => {
               <span>Location in Dharmapuri</span>
             </h2>
             <p className="text-slate-600 text-sm leading-relaxed mb-6">
-              Ezhil Hospital & Fertility Centre is situated in Dharmapuri, serving patients across the district with state-of-the-art diagnostic imaging, maternity services, and fertility care.
+              Ezhil Hospital & Fertility Centre is situated in Pappireddipatti, Dharmapuri District, serving patients across the region with state-of-the-art diagnostic imaging, maternity services, and fertility care.
             </p>
 
             <div className="w-full h-72 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 relative flex items-center justify-center">
@@ -144,7 +144,7 @@ export const Contact: React.FC = () => {
                   Ezhil Hospital & Fertility Centre
                 </div>
                 <div className="text-xs text-slate-600">
-                  Dharmapuri, Tamil Nadu, India
+                  Gopinathampatti Koot Road, Pappireddipatti, Tamil Nadu 636903
                 </div>
                 <a
                   href={HOSPITAL_INFO.googleMapsUrl}

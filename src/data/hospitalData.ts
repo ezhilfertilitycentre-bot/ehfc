@@ -27,14 +27,14 @@ export const HOSPITAL_INFO = {
   tagline: "Compassionate Care. Personalised Treatment. Hope for Tomorrow.",
   slogan: "Your Health. Our Care. Your Trust.",
   founder: "Dr. Senthilvadivu",
-  location: "Dharmapuri, Tamil Nadu",
+  location: "Pappireddipatti, Dharmapuri Dist., Tamil Nadu",
   primaryPhone: "9442497622",
   actionPhone: "8056984522",
-  whatsappNumber: "918056984522",
+  whatsappNumber: "919442497622",
   whatsappMessage: "Hello Ezhil Hospital & Fertility Centre, I would like to enquire about a fertility consultation.",
   email: "contact@ezhilhospital.com",
-  address: "Dharmapuri, Tamil Nadu, India",
-  googleMapsUrl: "https://maps.google.com/?q=Dharmapuri+Tamil+Nadu",
+  address: "Gopinathampatti Koot Road, Pappireddipatti Taluka, Gobinathampatti, Dharmapuri Dist., Tamil Nadu 636903",
+  googleMapsUrl: "https://maps.google.com/?q=Gopinathampatti+Koot+Road+Pappireddipatti+Tamil+Nadu+636903",
   establishedYear: 1998,
 };
 
