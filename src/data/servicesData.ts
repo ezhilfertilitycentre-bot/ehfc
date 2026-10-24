@@ -107,7 +107,8 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       { name: "Hysterectomy" },
       { name: "Laparoscopic Gynaecological Surgery" },
       { name: "Menstrual & Hormonal Health" },
-      { name: "Family Planning Counselling" }
+      { name: "Family Planning Counselling" },
+      { name: "Ectopic Pregnancy Care", note: "Diagnosis, clinical management, and referral pathways for ectopic pregnancy" }
     ],
     clinicalHighlights: [
       {
@@ -117,6 +118,10 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       {
         title: "Diagnostic & Operative Hysteroscopy",
         desc: "Direct visualization of the uterine cavity to assess polyps, fibroids, uterine septa, or unexplained heavy menstrual bleeding."
+      },
+      {
+        title: "Ectopic Pregnancy Care",
+        desc: "Clinical evaluation, haematological monitoring, and timely medical or surgical intervention pathways for ectopic (tubal) pregnancies. Surgical removal is performed laparoscopically — see General & Laparoscopic Surgical Services for the operative procedure."
       },
       {
         title: "Holistic Hormonal Care",
@@ -199,12 +204,22 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       { name: "Cyst Removal Surgery" },
       { name: "Laparoscopic Cholecystectomy" },
       { name: "Sterilisation Procedures" },
+      { name: "Laparoscopic Removal of Ectopic Pregnancy", note: "Minimally invasive surgical management of tubal/ectopic pregnancies" },
+      { name: "Hernia Surgery", note: "Surgical management of hernia — specific technique and hernia type confirmed with treating surgeon" },
       { name: "Post-operative Care" }
     ],
     clinicalHighlights: [
       {
         title: "Laparoscopic Gallbladder & Appendix Surgery",
         desc: "Safe keyhole removal of inflamed gallbladders (cholecystectomy) and appendix with rapid same-day or next-day mobilization."
+      },
+      {
+        title: "Laparoscopic Removal of Ectopic Pregnancy",
+        desc: "Minimally invasive keyhole surgery for the prompt and safe removal of ectopic (tubal) pregnancies. Performed by experienced surgeons to preserve fertility where possible. For clinical background and diagnosis, see Gynaecology & Women's Health."
+      },
+      {
+        title: "Hernia Surgery",
+        desc: "Surgical management of hernia presentations. The treating surgeon will advise on the most appropriate procedure, approach, and anaesthetic plan based on your specific clinical evaluation."
       },
       {
         title: "Benign Cyst & Mass Excision",
@@ -220,6 +235,11 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
         title: "Laparoscopic Endometriosis Surgery",
         path: "/endometriosis-infertility",
         desc: "Minimally invasive cystectomy, adhesiolysis, and pelvic restoration for patients experiencing chronic pain or infertility."
+      },
+      {
+        title: "Ectopic Pregnancy — Clinical Background",
+        path: "/services/gynaecology-womens-health",
+        desc: "Learn about ectopic pregnancy diagnosis, symptoms, monitoring, and management pathways in our Gynaecology department."
       }
     ],
     relatedCategorySlugs: ["operation-theatre", "inpatient-care", "gynaecology-womens-health"]
@@ -282,7 +302,8 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
     badge: "Cardiac Care",
     services: [
       { name: "Cardiology Consultation" },
-      { name: "24-Hour ECG Services / Monitoring", note: "Facility availability confirmed based on duty schedule", isSubjectToConfirmation: true },
+      { name: "ECG (Electrocardiogram)", note: "12-lead ECG available for outpatient and pre-operative cardiac evaluation" },
+      { name: "24-Hour ECG Monitoring", note: "Extended monitoring availability confirmed upon scheduling", isSubjectToConfirmation: true },
       { name: "Cardiology Specialist Opinion Available", note: "Consultations scheduled on specialist review basis", isSubjectToConfirmation: true }
     ],
     verificationNote: "Continuous monitoring availability and specialist consultation dates are confirmed with hospital reception.",
@@ -399,13 +420,14 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
   {
     slug: "ultrasound",
     number: 9,
-    title: "USG & Ultrasound Services",
+    title: "USG, Ultrasound & Imaging Services",
     departmentGroup: "diagnostics",
-    tagline: "High-Resolution Pelvic, Abdominal & Fetal Imaging (Senthil Scans)",
-    shortDesc: "Equipped with Senthil Scans for high-precision diagnostic ultrasound, follicular ovulation tracking, and comprehensive pregnancy scans.",
+    tagline: "High-Resolution Pelvic, Abdominal, Fetal Imaging & X-ray (Senthil Scans)",
+    shortDesc: "Equipped with Senthil Scans for high-precision diagnostic ultrasound, follicular ovulation tracking, comprehensive pregnancy scans, and X-ray imaging.",
     fullOverview: [
       "Ultrasound is an indispensable, non-invasive imaging modality for both obstetrics and reproductive medicine. Through our diagnostic facility, Senthil Scans, Ezhil Hospital provides high-resolution transvaginal, transabdominal, and Doppler ultrasonography.",
-      "From detailed fertility follicular tracking during IUI/IVF cycles to first-trimester NT scans, mid-trimester anomaly scans, and fetal growth monitoring, our scan department delivers clear diagnostic clarity."
+      "From detailed fertility follicular tracking during IUI/IVF cycles to first-trimester NT scans, mid-trimester anomaly scans, and fetal growth monitoring, our scan department delivers clear diagnostic clarity.",
+      "In addition to ultrasound services, we offer diagnostic X-ray (plain radiography) for relevant clinical indications as directed by the treating physician."
     ],
     image: "/images/fertility-evaluation.jpg",
     iconName: "Activity",
@@ -417,6 +439,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       { name: "Follicular Study (Ovulation Tracking)" },
       { name: "NT (Nuchal Translucency) Scan" },
       { name: "Anomaly Scan" },
+      { name: "X-ray", note: "Diagnostic radiography for relevant clinical indications" },
       { name: "Echo Scan", note: "Specific scan modality and schedule confirmed upon request", isSubjectToConfirmation: true }
     ],
     clinicalHighlights: [
@@ -427,6 +450,10 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       {
         title: "Comprehensive Fetal Anomaly Scans",
         desc: "Systematic anatomical evaluation between 18–22 weeks to assess fetal organ development, spine, heart, and placenta location."
+      },
+      {
+        title: "X-ray (Diagnostic Radiography)",
+        desc: "Plain radiography for relevant clinical indications, supporting pre-operative assessment, chest imaging, and orthopaedic or abdominal evaluation as directed by the treating physician."
       },
       {
         title: "Abdominal & Pelvic Pathology Imaging",
@@ -613,7 +640,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       { name: "Newborn & Paediatric Vaccination" },
       { name: "Antenatal (ANC) Vaccination" },
       { name: "Other Recommended Routine Vaccinations" },
-      { name: "Cancer-Preventive Vaccines", note: "Available upon consultation & request", isSubjectToConfirmation: true }
+      { name: "Cancer-Preventive Vaccination", note: "Includes vaccines indicated for the prevention of certain cancers in eligible men and women. Specific vaccine brands, age eligibility, and schedule are confirmed at consultation — please contact the hospital for details.", isSubjectToConfirmation: true }
     ],
     clinicalHighlights: [
       {
@@ -623,6 +650,10 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       {
         title: "Antenatal Protective Vaccines",
         desc: "Recommended Td/Tdap vaccinations during pregnancy to protect both mother and infant against neonatal tetanus and pertussis."
+      },
+      {
+        title: "Cancer-Preventive Vaccination",
+        desc: "The hospital offers cancer-preventive vaccinations for eligible men and women. The specific vaccine type, recommended age range, number of doses, and schedule are confirmed at the time of consultation. Please contact the hospital directly for current availability."
       },
       {
         title: "Vaccine Storage & Cold Chain",
@@ -637,14 +668,15 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
     title: "Other Specialities & Diagnostic Services",
     departmentGroup: "diagnostics",
     tagline: "Multispeciality Consultations & Allied Healthcare Opinions",
-    shortDesc: "Specialist consultations across Ear, Nose & Throat (ENT), oncology supportive reviews, diagnostic laboratory, and male sexual health.",
+    shortDesc: "Specialist consultations across Ear, Nose & Throat (ENT), Diabetology, oncology supportive reviews, diagnostic laboratory, and male sexual health.",
     fullOverview: [
       "To meet the wider healthcare needs of families in Dharmapuri, Ezhil Hospital coordinates access to visiting specialist consultants in allied medical and surgical domains. This multidisciplinary approach ensures patients receive well-rounded clinical care under one roof.",
-      "Our multispeciality care includes ENT reviews, cancer supportive care and general oncology consultations, diagnostic pathology, and confidential male andrology/sexual wellness evaluations."
+      "Our multispeciality care includes ENT reviews, diabetology (diabetes management and consultation), cancer supportive care and general oncology consultations, diagnostic pathology, and confidential male andrology/sexual wellness evaluations."
     ],
     customVisualTitle: "Multidisciplinary Allied Consultations",
     customVisualFeatures: [
       "Ear, Nose & Throat (ENT) Clinical Evaluations",
+      "Diabetology Consultations & Diabetes Management",
       "General Oncology Supportive Care Consultations",
       "Integrated Laboratory & Diagnostic Coordination"
     ],
@@ -653,6 +685,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
     services: [
       { name: "ENT (Ear, Nose & Throat) Consultations" },
       { name: "Oncology Consultation & Supportive Care" },
+      { name: "Diabetology", note: "Diabetes-related consultation, blood glucose management, and lifestyle guidance — visiting specialist availability confirmed with hospital reception", isSubjectToConfirmation: true },
       { name: "Diagnostic Laboratory" }
     ],
     clinicalHighlights: [
@@ -663,6 +696,10 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
       {
         title: "Oncology Supportive Care",
         desc: "Specialist consultation, guidance, and symptomatic supportive care for patients undergoing oncology medical evaluations."
+      },
+      {
+        title: "Diabetology",
+        desc: "Consultation and management support for patients with Type 1 or Type 2 diabetes, pre-diabetic conditions, and gestational diabetes. Includes blood glucose review, medication counselling, and lifestyle modification guidance. Availability of visiting diabetology specialists is confirmed with hospital reception."
       },
       {
         title: "Allied Diagnostic Support",
