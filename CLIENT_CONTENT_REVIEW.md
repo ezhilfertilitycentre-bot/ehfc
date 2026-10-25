@@ -12,7 +12,7 @@ The following hospital details were strictly extracted from the provided `Websit
 
 | Fact / Milestone | Implementation Details | Verified Source |
 | :--- | :--- | :--- |
-| **Hospital Founder** | Dr. Senthilvadivu | Page 25 of PDF |
+| **Hospital Founder** | (Name omitted per client explicit instruction) | Client update Oct 2026 |
 | **Establishment Date** | 4th June 1998 (as a small clinic) | Page 23 of PDF |
 | **Diagnostic Expansion** | Introduced Laboratory, Pharmacy, and ECG services in 2001 | Page 23 of PDF |
 | **Senthil Scans** | Established in 2013 for advanced ultrasound diagnostics | Page 23 of PDF |

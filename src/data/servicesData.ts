@@ -135,6 +135,11 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
         desc: "In-depth guide on recognizing symptoms, pelvic pain management, staging, and conservative laparoscopic surgical care."
       },
       {
+        title: "Laparoscopic Removal of Ectopic Pregnancy (Surgical Wing)",
+        path: "/services/general-laparoscopic-surgery",
+        desc: "Review operative details, keyhole techniques, and post-operative recovery for laparoscopic ectopic pregnancy removal in our General & Laparoscopic Surgical wing."
+      },
+      {
         title: "Cosmetic Gynaecology & Wellness",
         path: "/cosmetic-gynaecology",
         desc: "Discreet and respectful care for intimate wellness, post-childbirth restoration, and non-surgical aesthetic gynaecology."
@@ -184,7 +189,7 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
     title: "General & Laparoscopic Surgical Services",
     departmentGroup: "surgical",
     tagline: "Minimally Invasive Precision Surgery with Faster Recovery",
-    shortDesc: "Advanced laparoscopic appendectomy, cholecystectomy, cyst removal, hysterectomy, and general surgical interventions.",
+    shortDesc: "Comprehensive general and minimally invasive laparoscopic surgery including hernia repair, thyroidectomy, sebaceous cyst excision, lipoma excision, laparoscopic appendectomy, cholecystectomy, and ectopic pregnancy management.",
     fullOverview: [
       "Ezhil Hospital offers advanced minimally invasive surgical care performed by experienced general and laparoscopic surgeons. Laparoscopy utilizes tiny incisions, high-definition camera towers, and precision instruments to perform abdominal and pelvic procedures with reduced tissue trauma.",
       "Patients experience significantly less post-operative discomfort, shortened hospital stays, reduced wound infection rates, and faster return to their daily routines compared to traditional open surgery."
@@ -199,48 +204,54 @@ export const SERVICE_CATEGORIES: ServiceCategoryData[] = [
     iconName: "Activity",
     badge: "Advanced Laparoscopy",
     services: [
-      { name: "General Surgery" },
-      { name: "Laparoscopic Appendectomy" },
-      { name: "Hysterectomy" },
-      { name: "Cyst Removal Surgery" },
-      { name: "Laparoscopic Cholecystectomy" },
-      { name: "Sterilisation Procedures" },
-      { name: "Laparoscopic Removal of Ectopic Pregnancy", note: "Minimally invasive surgical management of tubal/ectopic pregnancies" },
-      { name: "Hernia Surgery", note: "Surgical management of hernia — specific technique and hernia type confirmed with treating surgeon" },
-      { name: "Post-operative Care" }
+      { name: "Hernia Surgery", note: "Surgical repair for inguinal, umbilical, and incisional hernias via open or minimally invasive tension-free mesh repair" },
+      { name: "Laparoscopic Removal of Ectopic Pregnancy", note: "Minimally invasive keyhole surgical management of tubal/ectopic pregnancy with fertility preservation pathways" },
+      { name: "Thyroidectomy", note: "Partial or total thyroid gland removal for nodules, goitres, and endocrine surgical indications" },
+      { name: "Sebaceous Cyst Excision", note: "Sterile surgical excision of benign sebaceous / epidermoid cysts with intact capsule removal and minimal scarring" },
+      { name: "Lipoma Excision", note: "Precision surgical removal of benign subcutaneous lipomas and fatty swellings with aesthetic skin closure" },
+      { name: "Laparoscopic Appendectomy", note: "Keyhole surgical removal of the inflamed appendix with rapid post-operative recovery" },
+      { name: "Laparoscopic Cholecystectomy", note: "Minimally invasive gallbladder removal for gallstones and cholecystitis" },
+      { name: "Laparoscopic Hysterectomy", note: "Minimally invasive removal of the uterus for fibroids, abnormal uterine bleeding, or pelvic pathologies" },
+      { name: "General Surgery Consultation & Evaluation", note: "Evaluation and minor surgical care for general surgical presentations" },
+      { name: "Sterilisation Procedures", note: "Permanent family planning and sterilisation procedures" },
+      { name: "Post-operative Care & Surgical Monitoring", note: "Standardized recovery protocols with continuous vital tracking, pain management, and attentive nursing" }
     ],
     clinicalHighlights: [
       {
-        title: "Laparoscopic Gallbladder & Appendix Surgery",
-        desc: "Safe keyhole removal of inflamed gallbladders (cholecystectomy) and appendix with rapid same-day or next-day mobilization."
+        title: "Hernia Surgery & Abdominal Wall Repair",
+        desc: "Surgical management for inguinal, umbilical, epigastric, and incisional hernias. Utilizing open or minimally invasive tension-free mesh repair techniques to restore abdominal wall strength and reduce recurrence risk."
       },
       {
         title: "Laparoscopic Removal of Ectopic Pregnancy",
-        desc: "Minimally invasive keyhole surgery for the prompt and safe removal of ectopic (tubal) pregnancies. Performed by experienced surgeons to preserve fertility where possible. For clinical background and diagnosis, see Gynaecology & Women's Health."
+        desc: "Timely, fertility-preserving keyhole surgery (salpingostomy or salpingectomy) for tubal and ectopic pregnancy presentations. Minimizes tissue trauma, internal bleeding risk, and post-operative discomfort. (Clinical diagnosis and monitoring pathways are linked in Gynaecology & Women's Health)."
       },
       {
-        title: "Hernia Surgery",
-        desc: "Surgical management of hernia presentations. The treating surgeon will advise on the most appropriate procedure, approach, and anaesthetic plan based on your specific clinical evaluation."
+        title: "Thyroidectomy (Thyroid Gland Surgery)",
+        desc: "Carefully planned surgical excision of thyroid tissue—partial hemithyroidectomy, subtotal, or total thyroidectomy—for symptomatic thyroid nodules, toxic or non-toxic goitres, and endocrine clinical indications, with strict preservation of the recurrent laryngeal nerves and parathyroid glands."
       },
       {
-        title: "Benign Cyst & Mass Excision",
-        desc: "Careful dissection and excision of ovarian cysts, abdominal wall masses, and soft tissue swellings with high surgical precision."
+        title: "Sebaceous Cyst Excision & Minor Soft-Tissue Surgery",
+        desc: "Precise surgical excision of benign epidermoid and sebaceous cysts performed under sterile local anaesthesia. Complete capsule removal ensures negligible recurrence rates, with fine suturing to guarantee optimal cosmetic healing."
       },
       {
-        title: "Dedicated Post-Operative Supervision",
-        desc: "Standardized recovery protocols with continuous vital tracking, multimodal pain relief, and attentive nursing care."
+        title: "Lipoma Excision & Benign Lump Removal",
+        desc: "Outpatient and day-care surgical removal of benign subcutaneous lipomas from the neck, shoulders, back, abdomen, or extremities with gentle tissue dissection and aesthetic layered wound closure."
+      },
+      {
+        title: "Laparoscopic Gallbladder & Appendix Surgery",
+        desc: "Minimally invasive keyhole procedures for acute and recurrent appendicitis (appendectomy) and symptomatic gallstone disease (cholecystectomy), allowing same-day or next-day ambulation and minimal scarring."
       }
     ],
     clinicalDetailGuides: [
       {
         title: "Laparoscopic Endometriosis Surgery",
         path: "/endometriosis-infertility",
-        desc: "Minimally invasive cystectomy, adhesiolysis, and pelvic restoration for patients experiencing chronic pain or infertility."
+        desc: "Minimally invasive cystectomy, adhesiolysis, and pelvic restoration for patients experiencing chronic pelvic pain or infertility."
       },
       {
-        title: "Ectopic Pregnancy — Clinical Background",
+        title: "Ectopic Pregnancy — Clinical Background & Diagnosis",
         path: "/services/gynaecology-womens-health",
-        desc: "Learn about ectopic pregnancy diagnosis, symptoms, monitoring, and management pathways in our Gynaecology department."
+        desc: "Learn about ectopic pregnancy clinical signs, early ultrasound detection, and conservative vs surgical pathways under Gynaecology & Women's Health."
       }
     ],
     relatedCategorySlugs: ["operation-theatre", "inpatient-care", "gynaecology-womens-health"]

@@ -26,7 +26,6 @@ export const HOSPITAL_INFO = {
   shortName: "Ezhil Fertility Centre",
   tagline: "Compassionate Care. Personalised Treatment. Hope for Tomorrow.",
   slogan: "Your Health. Our Care. Your Trust.",
-  founder: "Dr. Senthilvadivu",
   location: "Harur, Dharmapuri (DT), Tamil Nadu",
   primaryPhone: "9442497622",
   actionPhone: "8056984522",

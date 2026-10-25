@@ -105,7 +105,7 @@ export const Home: React.FC = () => {
               </p>
 
               <p className="text-slate-600 text-base leading-relaxed">
-                Founded by <strong className="font-black text-slate-950">{HOSPITAL_INFO.founder}</strong>, our journey began on 4th June 1998 as a small clinic. Over two decades of dedicated care, we expanded into a full-fledged hospital providing comprehensive fertility evaluations, IVF, ICSI, IUI, 24-hour maternity services, and advanced surgical procedures.
+                Our journey began on 4th June 1998 as a small clinic. Over two decades of dedicated care, we expanded into a full-fledged hospital providing comprehensive fertility evaluations, IVF, ICSI, IUI, 24-hour maternity services, and advanced surgical procedures.
               </p>
 
               <div className="pt-2">

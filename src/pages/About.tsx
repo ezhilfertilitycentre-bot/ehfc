@@ -9,7 +9,7 @@ export const About: React.FC = () => {
     <>
       <MetaTags
         title="About Us - Hospital Journey & History Since 1998"
-        description="Learn about Ezhil Hospital & Fertility Centre's journey from 1998, founded by Dr. Senthilvadivu in Dharmapuri. Discover our milestones, facilities, multispeciality surgical care, and fertility treatment legacy."
+        description="Learn about Ezhil Hospital & Fertility Centre's journey from 1998 in Dharmapuri. Discover our milestones, facilities, multispeciality surgical care, and fertility treatment legacy."
         canonicalPath="/about"
       />
 
@@ -31,21 +31,21 @@ export const About: React.FC = () => {
             </p>
           </div>
 
-          {/* Founder Section */}
+          {/* Leadership & Heritage Section */}
           <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-pink-100 mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
                 <span className="text-xs font-extrabold text-[#B51B83] uppercase tracking-wider">
-                  Leadership & Vision
+                  Leadership &amp; Heritage
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-extrabold text-[#1538B8]">
-                  Founder of Ezhil Hospital
+                  Our Healthcare Heritage &amp; Vision
                 </h2>
                 <div className="text-xl font-bold text-[#B51B83]">
-                  {HOSPITAL_INFO.founder}
+                  Serving Dharmapuri with Trust &amp; Medical Excellence Since 1998
                 </div>
                 <p className="text-slate-600 text-base leading-relaxed">
-                  The vision and dedication of our founder, <strong>{HOSPITAL_INFO.founder}</strong>, have been the foundation of Ezhil Hospital's journey since 1998. From a small clinic to an expanding multispeciality healthcare centre and fertility care facility, the institution continues to move forward with a commitment to quality healthcare and patient well-being.
+                  Since our inception on 4th June 1998, an enduring dedication to accessible, compassionate, and patient-centred healthcare has guided the journey of Ezhil Hospital &amp; Fertility Centre. From our earliest days as a community clinic to our growth into a modern multispeciality surgical hospital and comprehensive fertility centre, our institution remains steadfast in its commitment to clinical quality, advanced technology, and patient well-being.
                 </p>
                 <div className="p-4 bg-pink-50 rounded-2xl border-l-4 border-[#B51B83] text-sm text-[#30323A] font-semibold italic">
                   "Our Promise: Your Trust. Our Teamwork. Better Healthcare."
@@ -123,20 +123,20 @@ export const About: React.FC = () => {
               <div className="p-5 bg-slate-50 rounded-2xl border border-slate-200">
                 <h3 className="font-bold text-[#1538B8] text-lg mb-2 flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-[#B51B83]" />
-                  <span>General Surgery</span>
+                  <span>General &amp; Day-Care Surgery</span>
                 </h3>
                 <p className="text-slate-600 text-xs leading-relaxed">
-                  Surgical repair for conditions such as hernia, appendicitis, and general abdominal surgical procedures.
+                  Hernia surgery, thyroidectomy, sebaceous cyst excision, lipoma excision, appendicitis, and day-care surgical procedures.
                 </p>
               </div>
 
               <div className="p-5 bg-slate-50 rounded-2xl border border-slate-200">
                 <h3 className="font-bold text-[#1538B8] text-lg mb-2 flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-[#B51B83]" />
-                  <span>Laparoscopic Hysterectomy</span>
+                  <span>Laparoscopic Surgical Care</span>
                 </h3>
                 <p className="text-slate-600 text-xs leading-relaxed">
-                  Minimally invasive laparoscopic hysterectomy, diagnostic laparoscopy, and hysteroscopy for infertility evaluation.
+                  Minimally invasive laparoscopic removal of ectopic pregnancy, laparoscopic hysterectomy, laparoscopic cholecystectomy, and diagnostic laparoscopy.
                 </p>
               </div>
 
@@ -146,7 +146,7 @@ export const About: React.FC = () => {
                   <span>Oncology Surgeries</span>
                 </h3>
                 <p className="text-slate-600 text-xs leading-relaxed">
-                  Advanced surgical care for breast cancer, cervical cancer, and uterine cancers, along with thyroidectomy procedures.
+                  Specialized surgical care for breast, cervical, and uterine conditions, along with thyroidectomy procedures.
                 </p>
               </div>
 

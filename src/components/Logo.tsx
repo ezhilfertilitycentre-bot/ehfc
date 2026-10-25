@@ -75,18 +75,6 @@ export const Logo: React.FC<LogoProps> = ({ variant, className = '', showText = 
             >
               EZHIL HOSPITAL &amp; FERTILITY CENTRE
             </div>
-
-            {/* Doctor name — elegant, secondary, polished magenta */}
-            <div
-              className="text-doctor-gradient font-bold tracking-wide leading-snug mt-1 select-none"
-              style={{
-                fontSize: isFooter ? 'clamp(11px, 1.3vw, 13px)' : 'clamp(9px, 1.1vw, 11px)',
-                letterSpacing: '0.03em',
-              }}
-            >
-              Dr. Senthilvadivu &mdash; Founder &amp; Senior Consultant
-            </div>
-
           </div>
         )}
       </div>

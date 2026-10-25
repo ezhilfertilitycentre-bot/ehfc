@@ -35,7 +35,7 @@
 
 | Asset Description | Format | Notes |
 | :--- | :--- | :--- |
-| **Dr. Senthilvadivu Portrait** | PNG / JPG (Square 800x800) | Founder section on About Us page. |
+| **Hospital Leadership Photography** | PNG / JPG (Square 800x800) | Heritage section on About Us page (optional). |
 | **Lead IVF & Gynaecology Consultants** | PNG / JPG (Square 800x800) | Homepage highlight section. |
 
 ---
